@@ -1,7 +1,8 @@
 /// <reference types="vitest" />
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import viteReact from "@vitejs/plugin-react";
 import { execSync } from "child_process";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -13,7 +14,10 @@ export default defineConfig(() => {
     .trimEnd();
 
   return {
-    plugins: [react()],
+    plugins: [
+      viteReact({ babel: { plugins: ["babel-plugin-react-compiler"] } }),
+      tsconfigPaths(),
+    ],
     base: "/calendar",
   };
 });

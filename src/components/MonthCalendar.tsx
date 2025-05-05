@@ -21,7 +21,7 @@ function isToday(day: number | null, month: number, year: number): boolean {
   );
 }
 
-export default function Calendar({ month, year }: CalendarProps) {
+export default function MonthCalendar({ month, year }: CalendarProps) {
   const date = new Date(year, month - 1);
   const monthName = new Date(date).toLocaleString(locale, { month: "long" });
   const firstDayOfMonth = new Date(year, month - 1, 1).getDay();
@@ -39,7 +39,7 @@ export default function Calendar({ month, year }: CalendarProps) {
 
   return (
     <Card.Root>
-      <Card.Header>
+      <Card.Header p={2}>
         <Text
           textAlign="center"
           fontSize="lg"
@@ -50,7 +50,7 @@ export default function Calendar({ month, year }: CalendarProps) {
         </Text>
       </Card.Header>
 
-      <Card.Body minWidth={250}>
+      <Card.Body p={2} minWidth={250}>
         <Grid templateColumns="repeat(7, 1fr)" gap={0}>
           {days.map((day) => (
             <GridItem key={day} textAlign="right" p={2}>
@@ -60,18 +60,24 @@ export default function Calendar({ month, year }: CalendarProps) {
             </GridItem>
           ))}
 
-          {cells.map((day, index) => (
-            <GridItem
-              key={index}
-              textAlign="right"
-              p={2}
-              height={10}
-              borderRadius={10}
-              background={isToday(day, month, year) ? "orange.100" : undefined}
-            >
-              {day}
-            </GridItem>
-          ))}
+          {cells.map((day, index) => {
+            const todayProps = isToday(day, month, year)
+              ? {
+                  background: "orange.100",
+                  borderColor: "orange.200",
+                  borderRadius: 6,
+                  borderWidth: 1,
+                }
+              : undefined;
+
+            return (
+              <GridItem key={index} textAlign="right" p={2} height={9}>
+                <Text p={1} pt={0} pb={0} {...todayProps}>
+                  {day}
+                </Text>
+              </GridItem>
+            );
+          })}
         </Grid>
       </Card.Body>
     </Card.Root>

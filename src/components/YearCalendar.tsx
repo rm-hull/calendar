@@ -1,5 +1,5 @@
-import { SimpleGrid } from "@chakra-ui/react";
-import Calendar from "@/components/MonthCalendar";
+import { Box } from "@chakra-ui/react";
+import MonthCalendar from "@/components/MonthCalendar";
 
 type CalendarMonth = {
   year: number;
@@ -35,10 +35,10 @@ export default function YearCalendar({ month, year }: YearCalendarProps) {
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 
   return (
-    <SimpleGrid gap={4} alignItems="start" columns={{ base: 2, md: 3, lg: 4 }}>
+    <Box display="flex" flexWrap="wrap" gap={6} justifyContent="center">
       {first12.map((props, index) => (
-        <Calendar key={index} {...props} />
+        <MonthCalendar key={index} {...props} />
       ))}
-    </SimpleGrid>
+    </Box>
   );
 }

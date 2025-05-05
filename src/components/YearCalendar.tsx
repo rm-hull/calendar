@@ -10,6 +10,14 @@ function* yearGenerator(
   year: number = new Date().getFullYear(),
   month: number = new Date().getMonth() + 1
 ): Generator<CalendarMonth, CalendarMonth, unknown> {
+  if (isNaN(year)) {
+    throw new Error("Invalid year");
+  }
+
+  if (month < 1 || month > 12) {
+    throw new Error("Invalid month");
+  }
+
   while (true) {
     yield { year, month };
     month++;

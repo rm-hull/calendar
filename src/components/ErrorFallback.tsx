@@ -3,7 +3,7 @@ import { ErrorComponentProps } from "@tanstack/react-router";
 
 export function ErrorFallback({ error }: ErrorComponentProps) {
   return (
-    <Container>
+    <Container mt={8}>
       <Alert.Root status="error">
         <Alert.Indicator />
         <Alert.Title>Something went wrong:</Alert.Title>

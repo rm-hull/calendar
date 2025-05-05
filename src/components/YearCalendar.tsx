@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import MonthCalendar from "@/components/MonthCalendar";
 
 type CalendarMonth = {
@@ -35,10 +35,10 @@ export default function YearCalendar({ month, year }: YearCalendarProps) {
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 
   return (
-    <Box display="flex" flexWrap="wrap" gap={6} justifyContent="center">
+    <Flex flexWrap="wrap" gap={6} justifyContent="center">
       {first12.map((props, index) => (
         <MonthCalendar key={index} {...props} />
       ))}
-    </Box>
+    </Flex>
   );
 }

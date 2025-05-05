@@ -1,4 +1,5 @@
-import { Card, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Card, Grid, GridItem, Link, Text } from "@chakra-ui/react";
+import { Link as RouterLink } from "@tanstack/react-router";
 
 export type CalendarProps = {
   month: number;
@@ -73,7 +74,12 @@ export default function MonthCalendar({ month, year }: CalendarProps) {
             return (
               <GridItem key={index} textAlign="right" p={2} height={9}>
                 <Text p={1} pt={0} pb={0} {...todayProps}>
-                  {day}
+                  <Link
+                    as={RouterLink}
+                    href={`/calendar/on-this-day/${String(month).padStart(2, '0')}/${String(day).padStart(2, '0')}`}
+                  >
+                    {day}
+                  </Link>
                 </Text>
               </GridItem>
             );

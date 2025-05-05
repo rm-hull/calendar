@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Container } from "@chakra-ui/react";
 import YearCalendar from "@/components/YearCalendar";
+import Backdrop from "@/components/Backdrop";
 
 export const Route = createFileRoute("/calendar/")({
   component: CurrentYear,
@@ -8,8 +8,8 @@ export const Route = createFileRoute("/calendar/")({
 
 function CurrentYear() {
   return (
-    <Container p={8} width="100vw" margin="0 auto" background="orange.50">
+    <Backdrop>
       <YearCalendar />
-    </Container>
+    </Backdrop>
   );
 }

@@ -1,4 +1,6 @@
 /// <reference types="vitest" />
+
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import { defineConfig } from "vite";
 import viteReact from "@vitejs/plugin-react";
 import { execSync } from "child_process";
@@ -15,8 +17,9 @@ export default defineConfig(() => {
 
   return {
     plugins: [
-      viteReact({ babel: { plugins: ["babel-plugin-react-compiler"] } }),
       tsconfigPaths(),
+      TanStackRouterVite(),
+      viteReact({ babel: { plugins: ["babel-plugin-react-compiler"] } }),
     ],
     base: "/calendar",
   };

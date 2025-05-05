@@ -1,6 +1,6 @@
 import { Card, Grid, GridItem, Text } from "@chakra-ui/react";
 
-type CalendarProps = {
+export type CalendarProps = {
   month: number;
   year: number;
 };

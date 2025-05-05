@@ -9,7 +9,7 @@ export const Route = createFileRoute("/calendar/$year")({
 function SpecificYear() {
   const { year } = Route.useParams();
   return (
-    <Container p={8} width="100vw" margin="0 auto" background="gray.50">
+    <Container p={8} width="100vw" margin="0 auto" background="orange.50">
       <YearCalendar month={1} year={parseInt(year)} />
     </Container>
   );

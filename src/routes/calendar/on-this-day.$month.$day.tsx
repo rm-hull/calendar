@@ -4,6 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, Tabs, Text } from "@chakra-ui/react";
 import Event from "@/components/Event";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { useColorModeValue } from "@/components/ui/color-mode";
 
 export const Route = createFileRoute("/calendar/on-this-day/$month/$day")({
   component: RouteComponent,
@@ -22,7 +23,12 @@ function RouteComponent() {
   return (
     <Backdrop>
       <Tabs.Root defaultValue="selected">
-        <Tabs.List position="sticky" top={0} background="orange.50" zIndex={1}>
+        <Tabs.List
+          position="sticky"
+          top={0}
+          background={useColorModeValue("orange.50", "gray.900")}
+          zIndex={1}
+        >
           {Object.keys(onThisDay).map((tab, index) => (
             <Tabs.Trigger
               key={`tab_trigger_${index}`}

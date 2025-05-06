@@ -1,5 +1,6 @@
 import { Container } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
+import { useColorModeValue } from "./ui/color-mode";
 
 export default function Backdrop({ children }: PropsWithChildren) {
   return (
@@ -8,7 +9,7 @@ export default function Backdrop({ children }: PropsWithChildren) {
       width="100vw"
       minHeight="100vh"
       margin="0 auto"
-      background="orange.50"
+      background={useColorModeValue("orange.50", "gray.900")}
     >
       {children}
     </Container>

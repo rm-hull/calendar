@@ -1,5 +1,6 @@
 import { Card, Grid, GridItem, Link, Text } from "@chakra-ui/react";
 import { Link as RouterLink } from "@tanstack/react-router";
+import { useColorModeValue } from "./ui/color-mode";
 
 export type CalendarProps = {
   month: number;
@@ -23,6 +24,9 @@ function isToday(day: number | null, month: number, year: number): boolean {
 }
 
 export default function MonthCalendar({ month, year }: CalendarProps) {
+  const background = useColorModeValue("orange.100", "gray.700");
+  const borderColor = useColorModeValue("orange.200", "gray.600");
+
   const date = new Date(year, month - 1);
   const monthName = new Date(date).toLocaleString(locale, { month: "long" });
   const firstDayOfMonth = new Date(year, month - 1, 1).getDay();
@@ -64,8 +68,8 @@ export default function MonthCalendar({ month, year }: CalendarProps) {
           {cells.map((day, index) => {
             const todayProps = isToday(day, month, year)
               ? {
-                  background: "orange.100",
-                  borderColor: "orange.200",
+                  background,
+                  borderColor,
                   borderRadius: 6,
                   borderWidth: 1,
                 }
@@ -76,7 +80,10 @@ export default function MonthCalendar({ month, year }: CalendarProps) {
                 <Text p={1} pt={0} pb={0} {...todayProps}>
                   <Link
                     as={RouterLink}
-                    href={`/calendar/on-this-day/${String(month).padStart(2, '0')}/${String(day).padStart(2, '0')}`}
+                    href={`/calendar/on-this-day/${String(month).padStart(
+                      2,
+                      "0"
+                    )}/${String(day).padStart(2, "0")}`}
                   >
                     {day}
                   </Link>

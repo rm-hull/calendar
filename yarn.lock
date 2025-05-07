@@ -1326,26 +1326,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/router-generator@npm:^1.119.0":
-  version: 1.119.0
-  resolution: "@tanstack/router-generator@npm:1.119.0"
+"@tanstack/router-generator@npm:^1.120.1":
+  version: 1.120.1
+  resolution: "@tanstack/router-generator@npm:1.120.1"
   dependencies:
     "@tanstack/virtual-file-routes": "npm:^1.115.0"
     prettier: "npm:^3.5.0"
     tsx: "npm:^4.19.2"
     zod: "npm:^3.24.2"
   peerDependencies:
-    "@tanstack/react-router": ^1.119.0
+    "@tanstack/react-router": ^1.120.1
   peerDependenciesMeta:
     "@tanstack/react-router":
       optional: true
-  checksum: 10/f33cd7c1f2fe6154061d5ebf41913ad7465d05c24622b77f0f3bb6df9a0ff072f7addde3a8ae47c8860681ee937298e3b8d11fbea73db79e97e0f1918fda2d59
+  checksum: 10/8613599f4daffb37fde44e4a42140967f28752e199e009137b9126bcc9075080839300377ed6b8e4a242f1420e61dda3c95a875146c750ea1e797bd51eefb4bd
   languageName: node
   linkType: hard
 
-"@tanstack/router-plugin@npm:^1.119.0":
-  version: 1.119.0
-  resolution: "@tanstack/router-plugin@npm:1.119.0"
+"@tanstack/router-plugin@npm:^1.120.1":
+  version: 1.120.1
+  resolution: "@tanstack/router-plugin@npm:1.120.1"
   dependencies:
     "@babel/core": "npm:^7.26.8"
     "@babel/plugin-syntax-jsx": "npm:^7.25.9"
@@ -1354,7 +1354,7 @@ __metadata:
     "@babel/traverse": "npm:^7.26.8"
     "@babel/types": "npm:^7.26.8"
     "@tanstack/router-core": "npm:^1.119.0"
-    "@tanstack/router-generator": "npm:^1.119.0"
+    "@tanstack/router-generator": "npm:^1.120.1"
     "@tanstack/router-utils": "npm:^1.115.0"
     "@tanstack/virtual-file-routes": "npm:^1.115.0"
     "@types/babel__core": "npm:^7.20.5"
@@ -1366,7 +1366,7 @@ __metadata:
     zod: "npm:^3.24.2"
   peerDependencies:
     "@rsbuild/core": ">=1.0.2"
-    "@tanstack/react-router": ^1.119.0
+    "@tanstack/react-router": ^1.120.1
     vite: ">=5.0.0 || >=6.0.0"
     vite-plugin-solid: ^2.11.2
     webpack: ">=5.92.0"
@@ -1381,7 +1381,7 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: 10/0fa79af90ed94c23e4a677f682075dfc6bf17db0c7c80986766bd039a3833b5e29660d53fc71d0b0fb59c150dd6a4c3f6aa0ead055927183ec6e1d06fa28fd1c
+  checksum: 10/fbbb6b34c8e60a23a9090e4c64cff7b1167a54c41e0366d1526309ce4230495f16948d0160fc59e43cc97478222edc7e2bf4e39917d80f13e05b45aacf2a301f
   languageName: node
   linkType: hard
 
@@ -4652,7 +4652,7 @@ __metadata:
     "@tanstack/react-router": "npm:^1.119.0"
     "@tanstack/react-router-devtools": "npm:^1.119.1"
     "@tanstack/router-core": "npm:^1.119.0"
-    "@tanstack/router-plugin": "npm:^1.119.0"
+    "@tanstack/router-plugin": "npm:^1.120.1"
     "@types/node": "npm:^22.15.14"
     "@types/prop-types": "npm:^15.7.14"
     "@types/react": "npm:^19.1.3"

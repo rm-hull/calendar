@@ -1267,9 +1267,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-router@npm:^1.119.0":
-  version: 1.119.0
-  resolution: "@tanstack/react-router@npm:1.119.0"
+"@tanstack/react-router@npm:^1.120.2":
+  version: 1.120.2
+  resolution: "@tanstack/react-router@npm:1.120.2"
   dependencies:
     "@tanstack/history": "npm:1.115.0"
     "@tanstack/react-store": "npm:^0.7.0"
@@ -1280,7 +1280,7 @@ __metadata:
   peerDependencies:
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
-  checksum: 10/b4d4b7f77d10d9ac92faa03b4070d1ba079f76f8461765009c3d4c9867add84c16142665544e231c559e7395fd6cc45a114991314e2f68c0461af5cb5831932a
+  checksum: 10/f8cd2b6a7e2a52cbc3756dc07b666bbfc46210be4117f03413b9190593f219a26d1f39f2d22df37fd7954ff63235f2755478a4770c4c3803281fc6154d20b9ae
   languageName: node
   linkType: hard
 
@@ -4649,7 +4649,7 @@ __metadata:
     "@chakra-ui/react": "npm:^3.17.0"
     "@emotion/react": "npm:^11.14.0"
     "@eslint/js": "npm:^9.26.0"
-    "@tanstack/react-router": "npm:^1.119.0"
+    "@tanstack/react-router": "npm:^1.120.2"
     "@tanstack/react-router-devtools": "npm:^1.120.2"
     "@tanstack/router-core": "npm:^1.119.0"
     "@tanstack/router-plugin": "npm:^1.120.1"

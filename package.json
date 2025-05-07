@@ -27,7 +27,7 @@
     "@eslint/js": "^9.26.0",
     "@tanstack/react-router-devtools": "^1.120.2",
     "@tanstack/router-core": "^1.119.0",
-    "@tanstack/router-plugin": "^1.120.1",
+    "@tanstack/router-plugin": "^1.120.2",
     "@types/node": "^22.15.14",
     "@types/prop-types": "^15.7.14",
     "@types/react": "^19.1.3",

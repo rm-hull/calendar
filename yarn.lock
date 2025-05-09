@@ -1253,17 +1253,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-router-devtools@npm:^1.120.2":
-  version: 1.120.2
-  resolution: "@tanstack/react-router-devtools@npm:1.120.2"
+"@tanstack/react-router-devtools@npm:^1.120.3":
+  version: 1.120.3
+  resolution: "@tanstack/react-router-devtools@npm:1.120.3"
   dependencies:
-    "@tanstack/router-devtools-core": "npm:^1.119.0"
+    "@tanstack/router-devtools-core": "npm:^1.120.3"
     solid-js: "npm:^1.9.5"
   peerDependencies:
-    "@tanstack/react-router": ^1.120.2
+    "@tanstack/react-router": ^1.120.3
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
-  checksum: 10/526f139ebfebe33f0083174387cf4e7440e43ff373a5edcceb4dfffaccdf13d5cc915b5b987e2e9efe3f5784e1438f421f8a3292a7f785802785f4ddd27a0644
+  checksum: 10/fcfa4601396eaad32533e94003f8227a728b32268f679c18de6199de86e3baf9cfd53b69310a8f90ede55454030ae59594c73bb39550758982768f3e5caf0a32
   languageName: node
   linkType: hard
 
@@ -1319,21 +1319,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/router-devtools-core@npm:^1.119.0":
-  version: 1.119.0
-  resolution: "@tanstack/router-devtools-core@npm:1.119.0"
+"@tanstack/router-devtools-core@npm:^1.120.3":
+  version: 1.120.3
+  resolution: "@tanstack/router-devtools-core@npm:1.120.3"
   dependencies:
     clsx: "npm:^2.1.1"
     goober: "npm:^2.1.16"
   peerDependencies:
-    "@tanstack/router-core": ^1.119.0
+    "@tanstack/router-core": ^1.120.3
     csstype: ^3.0.10
     solid-js: ">=1.9.5"
     tiny-invariant: ^1.3.3
   peerDependenciesMeta:
     csstype:
       optional: true
-  checksum: 10/426ccf73573be039213ac7f0e3533c401b13b5a7106361eb8859dabc3969d5bf05b1721ce0c1164e1be894ed4e6fc778f85b2fc795ab033c956ff307c42c0a3a
+  checksum: 10/85c042bef3e6fd1ab515bf8f2ceafc2d293117f9e4aff7709c86728dc2ed5a1127204652e46c722d36e75df8c1cac34c97985c874500e0d6759b5557d7152557
   languageName: node
   linkType: hard
 
@@ -4661,7 +4661,7 @@ __metadata:
     "@emotion/react": "npm:^11.14.0"
     "@eslint/js": "npm:^9.26.0"
     "@tanstack/react-router": "npm:^1.120.2"
-    "@tanstack/react-router-devtools": "npm:^1.120.2"
+    "@tanstack/react-router-devtools": "npm:^1.120.3"
     "@tanstack/router-core": "npm:^1.120.3"
     "@tanstack/router-plugin": "npm:^1.120.1"
     "@types/node": "npm:^22.15.17"

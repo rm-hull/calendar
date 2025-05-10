@@ -1,17 +1,20 @@
 import Backdrop from "@/components/Backdrop";
 import YearCalendar from "@/components/YearCalendar";
-import { fetchUkBankHolidays } from "@/services/uk-bank-holidays";
-import { govUkToEvents } from "@/types/gov_uk";
+import { fetchCalendarEvents } from "@/services/calendar-events";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/calendar/$year")({
   component: SpecificYear,
-  loader: () => fetchUkBankHolidays(),
+  loader: (context) => {
+    const startDate = new Date(parseInt(context.params.year), 0, 1);
+    const endDate = new Date(parseInt(context.params.year), 11, 31);
+    return fetchCalendarEvents(startDate, endDate);
+  },
 });
 
 function SpecificYear() {
   const { year } = Route.useParams();
-  const events = govUkToEvents(Route.useLoaderData());
+  const events = Route.useLoaderData();
 
   return (
     <Backdrop>

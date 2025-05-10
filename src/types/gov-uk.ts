@@ -1,4 +1,4 @@
-import { CalendarEvents, CalendarEvent } from "../types/events";
+import { CalendarEvents, CalendarEvent } from "./events";
 
 type Region = {
   division: string;

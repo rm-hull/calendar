@@ -1,17 +1,31 @@
 import Backdrop from "@/components/Backdrop";
 import { OnThisDayEvent } from "@/types/wikimedia";
 import { createFileRoute } from "@tanstack/react-router";
-import { Container, Tabs, Text } from "@chakra-ui/react";
+import { Container, Progress, Tabs, Text } from "@chakra-ui/react";
 import WikimediaEvent from "@/components/WikimediaEvent";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useColorModeValue } from "@/components/ui/color-mode";
 import { fetchOnThisDay } from "@/services/wikimedia";
 
+function PendingComponent() {
+  const palette = useColorModeValue("orange", "gray");
+  return (
+    <Backdrop>
+      <Progress.Root maxW="100hw" value={null} size="sm" colorPalette={palette}>
+        <Progress.Label>Loading...</Progress.Label>
+        <Progress.Track>
+          <Progress.Range />
+        </Progress.Track>
+      </Progress.Root>
+    </Backdrop>
+  );
+}
+
 export const Route = createFileRoute("/calendar/on-this-day/$month/$day")({
   component: RouteComponent,
   loader: (context) => fetchOnThisDay(context.params.month, context.params.day),
   pendingMs: 100,
-  pendingComponent: () => <Backdrop>Loading...</Backdrop>,
+  pendingComponent: PendingComponent,
 });
 
 function RouteComponent() {

@@ -5,7 +5,7 @@ import { Container, Tabs, Text } from "@chakra-ui/react";
 import WikimediaEvent from "@/components/WikimediaEvent";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useColorModeValue } from "@/components/ui/color-mode";
-import { fetchOnThisDay } from "@/services/on-this-day";
+import { fetchOnThisDay } from "@/services/wikimedia";
 
 export const Route = createFileRoute("/calendar/on-this-day/$month/$day")({
   component: RouteComponent,

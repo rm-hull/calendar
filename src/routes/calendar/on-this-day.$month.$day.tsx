@@ -1,8 +1,8 @@
 import Backdrop from "@/components/Backdrop";
-import { OnThisDayAllResponse, OnThisDayEvent } from "@/types";
+import { OnThisDayAllResponse, OnThisDayEvent } from "@/types/wikimedia";
 import { createFileRoute } from "@tanstack/react-router";
 import { Container, Tabs, Text } from "@chakra-ui/react";
-import Event from "@/components/Event";
+import WikimediaEvent from "@/components/WikimediaEvent";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useColorModeValue } from "@/components/ui/color-mode";
 
@@ -46,7 +46,7 @@ function RouteComponent() {
                 <Masonry>
                   {((onThisDay as never)[tab] as OnThisDayEvent[]).map(
                     (event, index) => (
-                      <Event key={index} {...event} />
+                      <WikimediaEvent key={index} {...event} />
                     )
                   )}
                 </Masonry>

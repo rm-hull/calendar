@@ -1,10 +1,10 @@
-import { OnThisDayEvent } from "@/types";
+import { OnThisDayEvent } from "@/types/wikimedia";
 import { Card, Heading, Image, Link, Text } from "@chakra-ui/react";
 import { Fragment } from "react";
 
 type EventProps = Pick<OnThisDayEvent, "year" | "text" | "pages">;
 
-export default function Event({ year, text, pages }: EventProps) {
+export default function WikimediaEvent({ year, text, pages }: EventProps) {
   return (
     <Card.Root width={400}>
       <Card.Header p={2}>

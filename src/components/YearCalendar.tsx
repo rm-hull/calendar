@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import MonthCalendar from "@/components/MonthCalendar";
-import { Events } from "@/types/events";
+import { CalendarEvents } from "@/types/events";
 
 type CalendarMonth = {
   year: number;
@@ -30,10 +30,14 @@ function* yearGenerator(
 }
 
 interface YearCalendarProps extends Partial<CalendarMonth> {
-  events: Events;
+  events: CalendarEvents;
 }
 
-export default function YearCalendar({ month, year, events }: YearCalendarProps) {
+export default function YearCalendar({
+  month,
+  year,
+  events,
+}: YearCalendarProps) {
   const gen = yearGenerator(year, month);
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 

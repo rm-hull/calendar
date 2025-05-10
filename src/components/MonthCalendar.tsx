@@ -1,11 +1,11 @@
 import { Card, Grid, GridItem, Text } from "@chakra-ui/react";
+import { CalendarEvents } from "@/types/events";
 import Cell from "./Cell";
-import { Events } from "@/types/events";
 
 export type MonthCalendarProps = {
   month: number;
   year: number;
-  events: Events;
+  events: CalendarEvents;
 };
 
 const locale = navigator.language;
@@ -27,7 +27,11 @@ function isDate(
   };
 }
 
-export default function MonthCalendar({ month, year, events }: MonthCalendarProps) {
+export default function MonthCalendar({
+  month,
+  year,
+  events,
+}: MonthCalendarProps) {
   const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
   const monthName = new Date(date).toLocaleString(locale, { month: "long" });

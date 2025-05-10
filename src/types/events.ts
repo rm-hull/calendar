@@ -1,6 +1,6 @@
-export type Events = Record<string, Event[]>;
+export type CalendarEvents = Record<string, CalendarEvent[]>;
 
-export type Event = {
+export type CalendarEvent = {
   title: string;
   date: string;
   notes: string;

@@ -1,4 +1,4 @@
-import { Events, Event } from "../types/events";
+import { CalendarEvents, CalendarEvent } from "../types/events";
 
 type Region = {
   division: string;
@@ -14,18 +14,21 @@ type PublicHoliday = {
 
 export type UkBankHolidays = Record<string, Region>;
 
-export const govUkToEvents = (bankHolidays: UkBankHolidays): Events => {
-  return Object.values(bankHolidays).reduce((events: Events, region) => {
-    region.events.forEach((holiday) => {
-      const event: Event = {
-        title: holiday.title,
-        date: holiday.date,
-        notes: holiday.notes,
-        region: region.division,
-      };
+export const govUkToEvents = (bankHolidays: UkBankHolidays): CalendarEvents => {
+  return Object.values(bankHolidays).reduce(
+    (events: CalendarEvents, region) => {
+      region.events.forEach((holiday) => {
+        const event: CalendarEvent = {
+          title: holiday.title,
+          date: holiday.date,
+          notes: holiday.notes,
+          region: region.division,
+        };
 
-      events[holiday.date] = [...(events[holiday.date] || []), event];
-    });
-    return events;
-  }, {});
+        events[holiday.date] = [...(events[holiday.date] || []), event];
+      });
+      return events;
+    },
+    {}
+  );
 };

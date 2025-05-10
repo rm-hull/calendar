@@ -1,9 +1,9 @@
-import { Event } from "@/types/events";
+import { CalendarEvent } from "@/types/events";
 import { PropsWithChildren } from "react";
 import { Tooltip } from "./ui/tooltip";
 
 type EventsTooltipProps = {
-  events?: Event[];
+  events?: CalendarEvent[];
 };
 
 function blurb(event: { title: string; regions: string }) {

@@ -1,8 +1,7 @@
-import { Card, Grid, GridItem, Link, Text } from "@chakra-ui/react";
-import { Link as RouterLink } from "@tanstack/react-router";
-import { useColorModeValue } from "./ui/color-mode";
+import { Card, Grid, GridItem, Text } from "@chakra-ui/react";
+import Cell from "./Cell";
 
-export type CalendarProps = {
+export type MonthCalendarProps = {
   month: number;
   year: number;
 };
@@ -26,10 +25,7 @@ function isDate(
   };
 }
 
-export default function MonthCalendar({ month, year }: CalendarProps) {
-  const background = useColorModeValue("orange.100", "gray.700");
-  const borderColor = useColorModeValue("orange.200", "gray.600");
-
+export default function MonthCalendar({ month, year }: MonthCalendarProps) {
   const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
   const monthName = new Date(date).toLocaleString(locale, { month: "long" });
@@ -70,28 +66,16 @@ export default function MonthCalendar({ month, year }: CalendarProps) {
           ))}
 
           {cells.map((day, index) => {
-            const todayProps = isToday(day, month, year)
-              ? {
-                  background,
-                  borderColor,
-                  borderRadius: 6,
-                  borderWidth: 1,
-                }
-              : undefined;
-
             return (
               <GridItem key={index} textAlign="right" p={2} height={9}>
-                <Link
-                  as={RouterLink}
-                  href={`/calendar/on-this-day/${String(month).padStart(
-                    2,
-                    "0"
-                  )}/${String(day).padStart(2, "0")}`}
-                >
-                  <Text p={1} pt={0} pb={0} {...todayProps}>
-                    {day}
-                  </Text>
-                </Link>
+                {day && (
+                  <Cell
+                    day={day}
+                    month={month}
+                    isToday={isToday(day, month, year)}
+                    events={undefined}
+                  />
+                )}
               </GridItem>
             );
           })}

@@ -1,15 +1,15 @@
 import Backdrop from "@/components/Backdrop";
-import { OnThisDayAllResponse, OnThisDayEvent } from "@/types/wikimedia";
+import { OnThisDayEvent } from "@/types/wikimedia";
 import { createFileRoute } from "@tanstack/react-router";
 import { Container, Tabs, Text } from "@chakra-ui/react";
 import WikimediaEvent from "@/components/WikimediaEvent";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useColorModeValue } from "@/components/ui/color-mode";
+import { fetchOnThisDay } from "@/services/on-this-day";
 
 export const Route = createFileRoute("/calendar/on-this-day/$month/$day")({
   component: RouteComponent,
-  loader: (context) =>
-    fetchAboutThisDay(context.params.month, context.params.day),
+  loader: (context) => fetchOnThisDay(context.params.month, context.params.day),
   pendingMs: 100,
   pendingComponent: () => <Backdrop>Loading...</Backdrop>,
 });
@@ -57,24 +57,4 @@ function RouteComponent() {
       </Tabs.Root>
     </Backdrop>
   );
-}
-async function fetchAboutThisDay(
-  month: string,
-  day: string
-): Promise<OnThisDayAllResponse> {
-  const locale = navigator.language.split("-")[0];
-  const response = await fetch(
-    `https://api.wikimedia.org/feed/v1/wikipedia/${locale}/onthisday/all/${month}/${day}`,
-    {
-      headers: {
-        Accept: "application/json",
-        "API-User-Agent": "Calendar (https://github.com/rm-hull/calendar)",
-      },
-    }
-  );
-  if (!response.ok) {
-    console.error(response.text);
-    throw new Error(`Failed to fetch data for ${month}/${day}`);
-  }
-  return response.json();
 }

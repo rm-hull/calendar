@@ -1,5 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import MonthCalendar from "@/components/MonthCalendar";
+import { Events } from "@/types/events";
 
 type CalendarMonth = {
   year: number;
@@ -28,16 +29,18 @@ function* yearGenerator(
   }
 }
 
-type YearCalendarProps = Partial<CalendarMonth>;
+interface YearCalendarProps extends Partial<CalendarMonth> {
+  events: Events;
+}
 
-export default function YearCalendar({ month, year }: YearCalendarProps) {
+export default function YearCalendar({ month, year, events }: YearCalendarProps) {
   const gen = yearGenerator(year, month);
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 
   return (
     <Flex flexWrap="wrap" gap={6} justifyContent="center">
       {first12.map((props, index) => (
-        <MonthCalendar key={index} {...props} />
+        <MonthCalendar key={index} events={events} {...props} />
       ))}
     </Flex>
   );

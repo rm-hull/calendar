@@ -44,7 +44,7 @@ export default function Cell({ day, month, year, isToday, events }: CellProps) {
         }}
       >
         <EventsTooltip events={ev}>
-          <Text p={1} pt={0} pb={0} {...todayProps} {...eventProps}>
+          <Text pr={1} w={7} {...todayProps} {...eventProps}>
             {day}
           </Text>
         </EventsTooltip>

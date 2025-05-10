@@ -13,20 +13,24 @@ const days = [...Array(7).keys()].map((day) => {
   return date.toLocaleDateString(locale, { weekday: "short" });
 });
 
-function isToday(day: number | null, month: number, year: number): boolean {
-  if (!day) return false;
-  const today = new Date();
-  return (
-    today.getDate() === day &&
-    today.getMonth() + 1 === month &&
-    today.getFullYear() === year
-  );
+function isDate(
+  date: Date
+): (day: number | null, month: number, year: number) => boolean {
+  return (day, month, year) => {
+    if (!day) return false;
+    return (
+      date.getFullYear() === year &&
+      date.getMonth() + 1 === month &&
+      date.getDate() === day
+    );
+  };
 }
 
 export default function MonthCalendar({ month, year }: CalendarProps) {
   const background = useColorModeValue("orange.100", "gray.700");
   const borderColor = useColorModeValue("orange.200", "gray.600");
 
+  const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
   const monthName = new Date(date).toLocaleString(locale, { month: "long" });
   const firstDayOfMonth = new Date(year, month - 1, 1).getDay();

@@ -1,5 +1,5 @@
 import Backdrop from "@/components/Backdrop";
-import { OnThisDayEvent } from "@/types/wikimedia";
+import { OnThisDayCollection } from "@/types/wikimedia";
 import { createFileRoute } from "@tanstack/react-router";
 import { Container, Progress, Tabs, Text } from "@chakra-ui/react";
 import WikimediaEvent from "@/components/WikimediaEvent";
@@ -43,31 +43,44 @@ function RouteComponent() {
           background={useColorModeValue("orange.50", "gray.900")}
           zIndex={1}
         >
-          {Object.keys(onThisDay).map((tab, index) => (
-            <Tabs.Trigger
-              key={`tab_trigger_${index}`}
-              value={tab}
-              onClick={scrollToTopOfPage}
-            >
-              <Text textTransform="capitalize">{tab}</Text>
-            </Tabs.Trigger>
-          ))}
+          {Object.keys(onThisDay).map((tab, index) => {
+            const values = (onThisDay as never)[tab] as OnThisDayCollection;
+            const disabled =
+              (Array.isArray(values) && values.length === 0) ||
+              Object.keys(values).length === 0;
+
+            return (
+              <Tabs.Trigger
+                key={`tab_trigger_${index}`}
+                value={tab}
+                disabled={disabled}
+                onClick={scrollToTopOfPage}
+              >
+                <Text textTransform="capitalize">{tab}</Text>
+              </Tabs.Trigger>
+            );
+          })}
         </Tabs.List>
-        {Object.keys(onThisDay).map((tab, index) => (
-          <Tabs.Content key={`tab_content_${index}`} value={tab}>
-            <Container margin="0 auto" maxWidth="container.xl">
-              <ResponsiveMasonry>
-                <Masonry>
-                  {((onThisDay as never)[tab] as OnThisDayEvent[]).map(
-                    (event, index) => (
-                      <WikimediaEvent key={index} {...event} />
-                    )
-                  )}
-                </Masonry>
-              </ResponsiveMasonry>
-            </Container>
-          </Tabs.Content>
-        ))}
+        {Object.keys(onThisDay).map((tab, index) => {
+          const values = (onThisDay as never)[tab] as OnThisDayCollection;
+          return (
+            <Tabs.Content key={`tab_content_${index}`} value={tab}>
+              <Container margin="0 auto" maxWidth="container.xl">
+                <ResponsiveMasonry>
+                  <Masonry>
+                    {Array.isArray(values) ? (
+                      values.map((event, index) => (
+                        <WikimediaEvent key={index} {...event} />
+                      ))
+                    ) : (
+                      <Text>No data</Text>
+                    )}
+                  </Masonry>
+                </ResponsiveMasonry>
+              </Container>
+            </Tabs.Content>
+          );
+        })}
       </Tabs.Root>
     </Backdrop>
   );

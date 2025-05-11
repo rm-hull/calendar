@@ -4,11 +4,11 @@ export type OnThisDayAllResponse = {
   title: string;
   description: string;
   wikipedia: string;
-  selected: OnThisDayEvent[];
-  births: OnThisDayEvent[];
-  deaths: OnThisDayEvent[];
-  events: OnThisDayEvent[];
-  holidays: OnThisDayEvent[];
+  selected: OnThisDayCollection;
+  births: OnThisDayCollection;
+  deaths: OnThisDayCollection;
+  events: OnThisDayCollection;
+  holidays: OnThisDayCollection;
 };
 
 export type OnThisDayEvent = {
@@ -16,6 +16,8 @@ export type OnThisDayEvent = {
   pages: Page[];
   text: string;
 };
+
+export type OnThisDayCollection = OnThisDayEvent[] | object;
 
 export type Page = {
   type: string;

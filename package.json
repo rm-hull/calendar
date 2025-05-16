@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@chakra-ui/cli": "^3.19.0",
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^9.27.0",
     "@tanstack/react-router-devtools": "^1.120.3",
     "@tanstack/router-core": "^1.120.3",
     "@tanstack/router-plugin": "^1.120.3",

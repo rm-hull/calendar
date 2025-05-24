@@ -20,6 +20,7 @@ export default function Cell({ day, month, year, isToday, events }: CellProps) {
   const eventColor = useColorModeValue("orange.400", "gray.500");
 
   const todayProps = isToday && {
+    className: "today",
     background: todayBackground,
     borderColor: todayBorderColor,
     borderRadius: 6,
@@ -32,6 +33,7 @@ export default function Cell({ day, month, year, isToday, events }: CellProps) {
   const eventProps = ev && {
     fontWeight: "bold",
     color: eventColor,
+    className: "event",
   };
 
   return (

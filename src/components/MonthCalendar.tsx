@@ -49,7 +49,7 @@ export default function MonthCalendar({
   }
 
   return (
-    <Card.Root>
+    <Card.Root className="month-view">
       <Card.Header p={2}>
         <Text
           textAlign="center"
@@ -64,7 +64,7 @@ export default function MonthCalendar({
       <Card.Body p={2} minWidth={250}>
         <Grid templateColumns="repeat(7, 1fr)" gap={0}>
           {days.map((day) => (
-            <GridItem key={day} textAlign="right" p={2}>
+            <GridItem className="cell" key={day} textAlign="right" p={2}>
               <Text textStyle="caps" fontSize="xs" color="gray.500">
                 {day}
               </Text>
@@ -73,7 +73,13 @@ export default function MonthCalendar({
 
           {cells.map((day, index) => {
             return (
-              <GridItem key={index} textAlign="right" p={2} height={9}>
+              <GridItem
+                className="cell"
+                key={index}
+                textAlign="right"
+                p={2}
+                height={9}
+              >
                 {day && (
                   <Cell
                     day={day}

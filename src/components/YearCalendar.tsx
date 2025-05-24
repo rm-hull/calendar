@@ -42,7 +42,7 @@ export default function YearCalendar({
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 
   return (
-    <Flex flexWrap="wrap" gap={6} justifyContent="center">
+    <Flex className="year-view" flexWrap="wrap" gap={6} justifyContent="center">
       {first12.map((props, index) => (
         <MonthCalendar key={index} events={events} {...props} />
       ))}

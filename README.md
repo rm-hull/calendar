@@ -13,7 +13,7 @@ Each calendar cell is clickable and will retrieve events for the selected day fr
 
 ![image](./doc/on-this-day.webp)
 
-The yearly calendar can printed, and should format nicely on A4 in portrait or landscape mode:
+The yearly calendar can be printed, and should format nicely on A4 in portrait or landscape mode:
 
 ![image](./doc/print-layout.webp)
 

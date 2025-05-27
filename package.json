@@ -30,7 +30,7 @@
     "@tanstack/router-plugin": "^1.120.10",
     "@types/node": "^22.15.21",
     "@types/prop-types": "^15.7.14",
-    "@types/react": "^19.1.5",
+    "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@types/react-responsive-masonry": "^2.6.0",
     "@vitejs/plugin-react": "^4.5.0",

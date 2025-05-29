@@ -12,11 +12,16 @@ export async function fetchCalendarEvents(
   if (countryIsoCode === undefined) {
     return {};
   }
-  if (countryIsoCode === "GB") {
-    return govUkToEvents(await fetchUkBankHolidays());
-  }
+  try {
+    if (countryIsoCode === "GB") {
+      return govUkToEvents(await fetchUkBankHolidays());
+    }
 
-  return openHolidaysToEvents(
-    await fetchOpenHolidays(countryIsoCode, languageIsoCode, from, to)
-  );
+    return openHolidaysToEvents(
+      await fetchOpenHolidays(countryIsoCode, languageIsoCode, from, to)
+    );
+  } catch (err) {
+    console.log(err);
+    return {};
+  }
 }

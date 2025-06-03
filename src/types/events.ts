@@ -5,4 +5,5 @@ export type CalendarEvent = {
   date: string;
   notes: string;
   region: string;
+  language: string;
 };

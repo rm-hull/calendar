@@ -6,8 +6,17 @@ type EventsTooltipProps = {
   events?: CalendarEvent[];
 };
 
-function blurb(event: { title: string; regions: string }) {
-  return `${event.title} (${event.regions})`;
+type EventGroup = Record<
+  string,
+  {
+    title: string;
+    language: string;
+    regions: string[];
+  }
+>;
+
+function blurb(event: EventGroup[string]): string {
+  return `${event.title} (${event.language}: ${event.regions.join(", ")})`;
 }
 
 export default function EventsTooltip({
@@ -19,18 +28,19 @@ export default function EventsTooltip({
   }
 
   const events = Object.values(
-    originalEvents.reduce(
-      (acc: { [key: string]: { title: string; regions: string[] } }, event) => {
-        if (!acc[event.title]) {
-          acc[event.title] = { title: event.title, regions: [event.region] };
-        } else {
-          acc[event.title].regions.push(event.region);
-        }
-        return acc;
-      },
-      {}
-    )
-  ).map((event) => ({ title: event.title, regions: event.regions.join(", ") }));
+    originalEvents.reduce((acc: EventGroup, event) => {
+      if (!acc[event.title]) {
+        acc[event.title] = {
+          title: event.title,
+          language: event.language,
+          regions: [event.region],
+        };
+      } else {
+        acc[event.title].regions.push(event.region);
+      }
+      return acc;
+    }, {})
+  );
 
   const content = (
     <ul>

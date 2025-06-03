@@ -23,6 +23,7 @@ export const govUkToEvents = (bankHolidays: UkBankHolidays): CalendarEvents => {
           date: holiday.date,
           notes: holiday.notes,
           region: region.division,
+          language: "en-GB",
         };
 
         events[holiday.date] = [...(events[holiday.date] || []), event];

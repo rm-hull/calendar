@@ -30,7 +30,8 @@ type SubdivisionReference = {
 };
 
 export const openHolidaysToEvents = (
-  holidays: HolidayResponse[]
+  holidays: HolidayResponse[],
+  language: string
 ): CalendarEvents => {
   return holidays.reduce((acc: CalendarEvents, holiday) => {
     const endDate = holiday.endDate
@@ -46,6 +47,7 @@ export const openHolidaysToEvents = (
         date: dateString,
         notes: holiday.comment || "",
         region: holiday.regionalScope,
+        language,
       };
 
       if (acc[dateString]) {

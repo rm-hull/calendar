@@ -6,22 +6,41 @@ import { govUkToEvents } from "@/types/gov-uk";
 
 export async function fetchCalendarEvents(
   from: Date,
-  to: Date
+  to: Date,
+  languages = [navigator.language]
 ): Promise<CalendarEvents> {
-  const [languageIsoCode, countryIsoCode] = navigator.language.split("-");
-  if (countryIsoCode === undefined) {
-    return {};
-  }
-  try {
-    if (countryIsoCode === "GB") {
-      return govUkToEvents(await fetchUkBankHolidays());
-    }
+  const processPublicHolidays = async (
+    lang: string
+  ): Promise<CalendarEvents> => {
+    try {
+      const [languageIsoCode, countryIsoCode] = lang.split("-");
+      if (!countryIsoCode) {
+        return {};
+      }
 
-    return openHolidaysToEvents(
-      await fetchOpenHolidays(countryIsoCode, languageIsoCode, from, to)
-    );
-  } catch (err) {
-    console.log(err);
-    return {};
-  }
+      if (countryIsoCode === "GB") {
+        return govUkToEvents(await fetchUkBankHolidays());
+      }
+
+      return openHolidaysToEvents(
+        await fetchOpenHolidays(countryIsoCode, languageIsoCode, from, to),
+        lang
+      );
+    } catch (err) {
+      console.log({ lang, err });
+      return {};
+    }
+  };
+
+  const results = await Promise.all(languages.map(processPublicHolidays));
+  return results.reduce((acc, events) => {
+    Object.entries(events).forEach(([key, value]) => {
+      if (acc[key]) {
+        acc[key] = [...acc[key], ...value];
+      } else {
+        acc[key] = value;
+      }
+    });
+    return acc;
+  }, {} as CalendarEvents);
 }

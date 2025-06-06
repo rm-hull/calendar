@@ -1382,17 +1382,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-router-devtools@npm:^1.120.15":
-  version: 1.120.15
-  resolution: "@tanstack/react-router-devtools@npm:1.120.15"
+"@tanstack/react-router-devtools@npm:^1.120.16":
+  version: 1.120.16
+  resolution: "@tanstack/react-router-devtools@npm:1.120.16"
   dependencies:
     "@tanstack/router-devtools-core": "npm:^1.120.15"
     solid-js: "npm:^1.9.5"
   peerDependencies:
-    "@tanstack/react-router": ^1.120.15
+    "@tanstack/react-router": ^1.120.16
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
-  checksum: 10/2afa67f9e9366a9bfa21dbe937b07679f7721ad17e05bf8ceee4b236a6f992a51496c741c88856ad4d02a64da92a573689ae541fa9a8a6e6c290de0a83254e52
+  checksum: 10/e51c26c3026b2e6391a153b1d46084ec9dd299eb9a58458af3f16e3cebced8fa7034657d32bab3170c527571733d50f43439fcfe711d3594d50df3dcb0a0f085
   languageName: node
   linkType: hard
 
@@ -4486,7 +4486,7 @@ __metadata:
     "@emotion/react": "npm:^11.14.0"
     "@eslint/js": "npm:^9.28.0"
     "@tanstack/react-router": "npm:^1.120.15"
-    "@tanstack/react-router-devtools": "npm:^1.120.15"
+    "@tanstack/react-router-devtools": "npm:^1.120.16"
     "@tanstack/router-core": "npm:^1.120.15"
     "@tanstack/router-plugin": "npm:^1.120.15"
     "@types/node": "npm:^22.15.29"

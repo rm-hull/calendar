@@ -1665,12 +1665,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.15.34":
-  version: 22.15.34
-  resolution: "@types/node@npm:22.15.34"
+"@types/node@npm:^24.0.8":
+  version: 24.0.8
+  resolution: "@types/node@npm:24.0.8"
   dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10/b0fb6674f6c17e3d515531d7f787ccd6676641ba161a6a0e6a93a2d5bc2089fde492eac24b5152a11413bf07a818055a9ec9077d3200b03cf7ea9718470a8417
+    undici-types: "npm:~7.8.0"
+  checksum: 10/99edcbdb1bd2c55d02d989deaccef9ff25c9094be7c7ee7c0b0ed722399bed2138e2fcee7c8fd76fe8da79e83735f3b129ee2fca7caa9bafb0f22b7418486730
   languageName: node
   linkType: hard
 
@@ -4613,7 +4613,7 @@ __metadata:
     "@tanstack/react-router-devtools": "npm:^1.122.0"
     "@tanstack/router-core": "npm:^1.122.0"
     "@tanstack/router-plugin": "npm:^1.122.0"
-    "@types/node": "npm:^22.15.34"
+    "@types/node": "npm:^24.0.8"
     "@types/prop-types": "npm:^15.7.15"
     "@types/react": "npm:^19.1.8"
     "@types/react-dom": "npm:^19.1.6"
@@ -5762,10 +5762,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.21.0":
-  version: 6.21.0
-  resolution: "undici-types@npm:6.21.0"
-  checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
+"undici-types@npm:~7.8.0":
+  version: 7.8.0
+  resolution: "undici-types@npm:7.8.0"
+  checksum: 10/fcff3fbab234f067fbd69e374ee2c198ba74c364ceaf6d93db7ca267e784457b5518cd01d0d2329b075f412574205ea3172a9a675facb49b4c9efb7141cd80b7
   languageName: node
   linkType: hard
 

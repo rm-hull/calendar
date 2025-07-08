@@ -28,7 +28,7 @@
     "@tanstack/react-router-devtools": "^1.124.0",
     "@tanstack/router-core": "^1.124.0",
     "@tanstack/router-plugin": "^1.124.0",
-    "@types/node": "^22.16.0",
+    "@types/node": "^24.0.11",
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

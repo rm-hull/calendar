@@ -2,6 +2,7 @@ import { Card, Grid, GridItem, Text } from "@chakra-ui/react";
 import { type CalendarEvents } from "@/types/events";
 import { type StartDay } from "@/types/start-day";
 import Cell from "./Cell";
+import { useMemo } from "react";
 
 export type MonthCalendarProps = {
   month: number;
@@ -46,7 +47,7 @@ export default function MonthCalendar({
   const daysInMonth = new Date(year, month, 0).getDate();
 
   // Shift the weekday headers according to startDay
-  const days = getDays(startDay);
+  const days = useMemo(() => getDays(startDay), [startDay]);
 
   // Calculate the offset for the first day of the month
   // JS getDay(): 0=Sun, 1=Mon, ..., 6=Sat

@@ -1,10 +1,12 @@
 import { Flex } from "@chakra-ui/react";
 import MonthCalendar from "@/components/MonthCalendar";
-import { CalendarEvents } from "@/types/events";
+import { type CalendarEvents } from "@/types/events";
+import { type StartDay } from "@/types/start-day";
 
 type CalendarMonth = {
   year: number;
   month: number;
+  startDay?: StartDay;
 };
 
 function* yearGenerator(
@@ -37,6 +39,7 @@ export default function YearCalendar({
   month,
   year,
   events,
+  startDay = "sun",
 }: YearCalendarProps) {
   const gen = yearGenerator(year, month);
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
@@ -44,7 +47,12 @@ export default function YearCalendar({
   return (
     <Flex className="year-view" flexWrap="wrap" gap={6} justifyContent="center">
       {first12.map((props, index) => (
-        <MonthCalendar key={index} events={events} {...props} />
+        <MonthCalendar
+          key={index}
+          events={events}
+          startDay={startDay}
+          {...props}
+        />
       ))}
     </Flex>
   );

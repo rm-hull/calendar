@@ -1,18 +1,25 @@
 import { Card, Grid, GridItem, Text } from "@chakra-ui/react";
-import { CalendarEvents } from "@/types/events";
+import { type CalendarEvents } from "@/types/events";
+import { type StartDay } from "@/types/start-day";
 import Cell from "./Cell";
+import { useMemo } from "react";
 
 export type MonthCalendarProps = {
   month: number;
   year: number;
   events: CalendarEvents;
+  startDay?: StartDay;
 };
 
 const locale = navigator.language;
-const days = [...Array(7).keys()].map((day) => {
-  const date = new Date(Date.UTC(2023, 0, 1 + day));
-  return date.toLocaleDateString(locale, { weekday: "short" });
-});
+
+function getDays(startDay: StartDay) {
+  const offset = startDay === "sun" ? 0 : 1;
+  return [...Array(7).keys()].map((i) => {
+    const date = new Date(Date.UTC(2023, 0, 1 + ((i + offset) % 7)));
+    return date.toLocaleDateString(locale, { weekday: "short" });
+  });
+}
 
 function isDate(
   date: Date
@@ -31,6 +38,7 @@ export default function MonthCalendar({
   month,
   year,
   events,
+  startDay = "sun",
 }: MonthCalendarProps) {
   const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
@@ -38,11 +46,19 @@ export default function MonthCalendar({
   const firstDayOfMonth = new Date(year, month - 1, 1).getDay();
   const daysInMonth = new Date(year, month, 0).getDate();
 
+  // Shift the weekday headers according to startDay
+  const days = useMemo(() => getDays(startDay), [startDay]);
+
+  // Calculate the offset for the first day of the month
+  // JS getDay(): 0=Sun, 1=Mon, ..., 6=Sat
+  const offset =
+    startDay === "mon" ? (firstDayOfMonth + 6) % 7 : firstDayOfMonth;
+
   const totalDays = 35; // 5 rows * 7 days
   const cells: (number | null)[] = Array(totalDays).fill(null);
 
   for (let d = 1; d <= daysInMonth; d++) {
-    const naturalIndex = firstDayOfMonth + (d - 1);
+    const naturalIndex = offset + (d - 1);
     // If the natural index spills over, wrap it back to the first row.
     const cellIndex = naturalIndex < 35 ? naturalIndex : naturalIndex - 35;
     cells[cellIndex] = d;

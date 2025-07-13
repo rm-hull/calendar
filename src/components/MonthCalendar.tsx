@@ -52,11 +52,7 @@ export default function MonthCalendar({
   // Calculate the offset for the first day of the month
   // JS getDay(): 0=Sun, 1=Mon, ..., 6=Sat
   const offset =
-    startDay === "mon"
-      ? firstDayOfMonth === 0
-        ? 6
-        : firstDayOfMonth - 1
-      : firstDayOfMonth;
+    startDay === "mon" ? (firstDayOfMonth + 6) % 7 : firstDayOfMonth;
 
   const totalDays = 35; // 5 rows * 7 days
   const cells: (number | null)[] = Array(totalDays).fill(null);

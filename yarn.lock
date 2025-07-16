@@ -1548,6 +1548,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/router-core@npm:^1.128.0":
+  version: 1.128.0
+  resolution: "@tanstack/router-core@npm:1.128.0"
+  dependencies:
+    "@tanstack/history": "npm:1.121.34"
+    "@tanstack/store": "npm:^0.7.0"
+    cookie-es: "npm:^1.2.2"
+    seroval: "npm:^1.3.2"
+    seroval-plugins: "npm:^1.3.2"
+    tiny-invariant: "npm:^1.3.3"
+    tiny-warning: "npm:^1.0.3"
+  checksum: 10/f6eebc039d854cea81d72b9f482a3655ce9bf746d2cd7748e6a8d35eaadb4732eb851fea51ba6217158175777de467a3fdcf9408858708df983818e12e029968
+  languageName: node
+  linkType: hard
+
 "@tanstack/router-devtools-core@npm:^1.127.3":
   version: 1.127.3
   resolution: "@tanstack/router-devtools-core@npm:1.127.3"
@@ -4691,7 +4706,7 @@ __metadata:
     "@tanstack/eslint-plugin-router": "npm:^1.125.0"
     "@tanstack/react-router": "npm:^1.127.3"
     "@tanstack/react-router-devtools": "npm:^1.127.3"
-    "@tanstack/router-core": "npm:^1.127.3"
+    "@tanstack/router-core": "npm:^1.128.0"
     "@tanstack/router-plugin": "npm:^1.127.5"
     "@types/node": "npm:^24.0.13"
     "@types/prop-types": "npm:^15.7.15"

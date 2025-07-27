@@ -34,6 +34,13 @@ function isDate(
   };
 }
 
+function isWeekend(day: number | null, month: number, year: number): boolean {
+  if (!day) return false;
+  const date = new Date(year, month - 1, day);
+  const dayOfWeek = date.getDay();
+  return dayOfWeek === 0 || dayOfWeek === 6; // Sunday or Saturday
+}
+
 export default function MonthCalendar({
   month,
   year,
@@ -95,6 +102,7 @@ export default function MonthCalendar({
                 textAlign="right"
                 p={2}
                 height={9}
+                background={isWeekend(day, month, year) ? "gray.100" : "transparent"}
               >
                 {day && (
                   <Cell

@@ -26,7 +26,7 @@
     "@chakra-ui/cli": "^3.23.0",
     "@eslint/js": "^9.32.0",
     "@tanstack/eslint-plugin-router": "^1.129.7",
-    "@tanstack/react-router-devtools": "^1.130.1",
+    "@tanstack/react-router-devtools": "^1.131.14",
     "@tanstack/router-core": "^1.130.1",
     "@tanstack/router-plugin": "^1.130.1",
     "@types/node": "^24.1.0",

@@ -18,6 +18,13 @@ export function SettingsForm() {
     });
   };
 
+  const handleUpdateBackgroundColorForWeekend = () => {
+    updateSettings({
+      ...settings,
+      showBackgroundColorForWeekend: !settings?.showBackgroundColorForWeekend,
+    });
+  };
+
   return (
     <VStack gap={6}>
       <Field.Root>
@@ -44,16 +51,35 @@ export function SettingsForm() {
       </Field.Root>
 
       <Field.Root>
-        <Switch.Root
-          checked={settings?.showTipsOnStartup ?? true}
-          onChange={handleUpdateTipsOnStartup}
-        >
-          <Switch.Label>Show tips on start-up?</Switch.Label>
-          <Switch.HiddenInput />
-          <Switch.Control>
-            <Switch.Thumb />
-          </Switch.Control>
-        </Switch.Root>
+        <HStack alignItems="start">
+          <Field.Label width={170}>
+            Show background colour for weekend?
+          </Field.Label>
+          <Switch.Root
+            checked={settings?.showBackgroundColorForWeekend}
+            onChange={handleUpdateBackgroundColorForWeekend}
+          >
+            <Switch.HiddenInput />
+            <Switch.Control>
+              <Switch.Thumb />
+            </Switch.Control>
+          </Switch.Root>
+        </HStack>
+      </Field.Root>
+
+      <Field.Root>
+        <HStack alignItems="top">
+          <Field.Label width={170}>Show tips on start-up?</Field.Label>
+          <Switch.Root
+            checked={settings?.showTipsOnStartup ?? true}
+            onChange={handleUpdateTipsOnStartup}
+          >
+            <Switch.HiddenInput />
+            <Switch.Control>
+              <Switch.Thumb />
+            </Switch.Control>
+          </Switch.Root>
+        </HStack>
       </Field.Root>
     </VStack>
   );

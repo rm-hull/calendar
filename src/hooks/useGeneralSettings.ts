@@ -4,6 +4,7 @@ import { useLocalStorage } from "./useLocalStorage";
 export interface GeneralSettings {
   startDay?: StartDay;
   showTipsOnStartup?: boolean;
+  showBackgroundColorForWeekend?: boolean;
 }
 
 type UseGeneralSettingsReturnType = [

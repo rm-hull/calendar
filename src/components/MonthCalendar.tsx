@@ -3,6 +3,7 @@ import { type CalendarEvents } from "@/types/events";
 import { type StartDay } from "@/types/start-day";
 import Cell from "./Cell";
 import { useMemo } from "react";
+import { useGeneralSettings } from "@/hooks/useGeneralSettings";
 
 export type MonthCalendarProps = {
   month: number;
@@ -47,6 +48,7 @@ export default function MonthCalendar({
   events,
   startDay = "sun",
 }: MonthCalendarProps) {
+  const [settings] = useGeneralSettings();
   const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
   const monthName = new Date(date).toLocaleString(locale, { month: "long" });
@@ -102,7 +104,12 @@ export default function MonthCalendar({
                 textAlign="right"
                 p={2}
                 height={9}
-                background={isWeekend(day, month, year) ? "gray.100" : "transparent"}
+                background={
+                  settings?.showBackgroundColorForWeekend &&
+                  isWeekend(day, month, year)
+                    ? "gray.100"
+                    : undefined
+                }
               >
                 {day && (
                   <Cell

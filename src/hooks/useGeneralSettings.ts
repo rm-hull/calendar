@@ -1,8 +1,6 @@
 import { StartDay } from "@/types/start-day";
 import { useLocalStorage } from "./useLocalStorage";
 
-export type InitialLocation = "default" | "current" | "custom";
-
 export interface GeneralSettings {
   startDay?: StartDay;
   showTipsOnStartup?: boolean;

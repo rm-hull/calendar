@@ -6,6 +6,9 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/calendar/$year")({
   component: SpecificYear,
+  validateSearch: (search: Record<string, unknown>) => ({
+    startDay: isStartDay(search.startDay) ? search.startDay : undefined,
+  }),
   loader: (context) => {
     const searchParams = new URLSearchParams(context.location.search);
     const languages = searchParams.get("languages")?.split(",") || [
@@ -16,9 +19,6 @@ export const Route = createFileRoute("/calendar/$year")({
     const endDate = new Date(parseInt(context.params.year), 11, 31);
     return fetchCalendarEvents(startDate, endDate, languages);
   },
-  validateSearch: (search: Record<string, unknown>) => ({
-    startDay: isStartDay(search.startDay) ? search.startDay : undefined,
-  }),
 });
 
 function SpecificYear() {

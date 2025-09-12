@@ -6,6 +6,9 @@ import { isStartDay } from "@/types/start-day";
 
 export const Route = createFileRoute("/calendar/")({
   component: CurrentYear,
+  validateSearch: (search: Record<string, unknown>) => ({
+    startDay: isStartDay(search.startDay) ? search.startDay : undefined,
+  }),
   loader: (context) => {
     const languages = new URLSearchParams(context.location.search)
       .get("languages")
@@ -19,9 +22,6 @@ export const Route = createFileRoute("/calendar/")({
 
     return fetchCalendarEvents(startDate, endDate, languages);
   },
-  validateSearch: (search: Record<string, unknown>) => ({
-    startDay: isStartDay(search.startDay) ? search.startDay : undefined,
-  }),
 });
 
 function CurrentYear() {

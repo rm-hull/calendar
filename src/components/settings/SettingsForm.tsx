@@ -14,7 +14,7 @@ export function SettingsForm() {
   const handleUpdateTipsOnStartup = () => {
     updateSettings({
       ...settings,
-      showTipsOnStartup: !settings?.showTipsOnStartup,
+      showTipsOnStartup: !(settings?.showTipsOnStartup ?? true),
     });
   };
 

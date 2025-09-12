@@ -67,7 +67,7 @@ export function SettingsDialog() {
         }),
       1_500
     );
-  }, []);
+  }, [settings?.showTipsOnStartup]);
 
   return (
     <Dialog.Root

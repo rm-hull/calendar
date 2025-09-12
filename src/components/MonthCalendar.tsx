@@ -3,6 +3,7 @@ import { type CalendarEvents } from "@/types/events";
 import { type StartDay } from "@/types/start-day";
 import Cell from "./Cell";
 import { useMemo } from "react";
+import { useGeneralSettings } from "@/hooks/useGeneralSettings";
 
 export type MonthCalendarProps = {
   month: number;
@@ -34,12 +35,20 @@ function isDate(
   };
 }
 
+function isWeekend(day: number | null, month: number, year: number): boolean {
+  if (!day) return false;
+  const date = new Date(year, month - 1, day);
+  const dayOfWeek = date.getDay();
+  return dayOfWeek === 0 || dayOfWeek === 6; // Sunday or Saturday
+}
+
 export default function MonthCalendar({
   month,
   year,
   events,
   startDay = "sun",
 }: MonthCalendarProps) {
+  const [settings] = useGeneralSettings();
   const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
   const monthName = new Date(date).toLocaleString(locale, { month: "long" });
@@ -95,6 +104,12 @@ export default function MonthCalendar({
                 textAlign="right"
                 p={2}
                 height={9}
+                background={
+                  settings?.showBackgroundColorForWeekend &&
+                  isWeekend(day, month, year)
+                    ? "gray.100"
+                    : undefined
+                }
               >
                 {day && (
                   <Cell

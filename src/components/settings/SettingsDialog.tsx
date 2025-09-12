@@ -30,8 +30,8 @@ function ToastDescription() {
         <IoInformationCircleSharp />
       </Icon>
       <Text>
-        Settings can be accessed by pressing: <Kbd>CTRL</Kbd> +{" "}
-        <Kbd>{commandPrefix}</Kbd>
+        Settings can be accessed by pressing: <Kbd>{commandPrefix}</Kbd> +{" "}
+        <Kbd>.</Kbd>
       </Text>
     </HStack>
   );
@@ -51,7 +51,7 @@ export function SettingsDialog() {
   useEffect(() => {
     if (!(settings?.showTipsOnStartup ?? true)) return;
 
-    setTimeout(
+    const timerId = setTimeout(
       () =>
         toaster.create({
           id: TOASTER_ID,
@@ -67,6 +67,8 @@ export function SettingsDialog() {
         }),
       1_500
     );
+
+    return () => clearTimeout(timerId);
   }, [settings?.showTipsOnStartup]);
 
   return (

@@ -1,7 +1,7 @@
 import { atom, useAtom } from "jotai";
 import { useCallback, useEffect } from "react";
 
-const localStorage = atom<Record<string, unknown> | undefined>(undefined);
+const localStorageAtom = atom<Record<string, unknown> | undefined>(undefined);
 
 type UseLocalStorageReturnType<T> = [
   T | undefined,
@@ -25,7 +25,7 @@ export const useLocalStorage = <T>(
     }
   }, [key]);
 
-  const [storedValue, setStoredValue] = useAtom(localStorage);
+  const [storedValue, setStoredValue] = useAtom(localStorageAtom);
 
   const setValue = useCallback(
     (value: T | undefined): void => {

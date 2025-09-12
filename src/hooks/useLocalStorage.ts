@@ -52,7 +52,7 @@ export const useLocalStorage = <T>(
   );
 
   useEffect(() => {
-    setStoredValue((prev) => ({ ...prev, [key]: readValue() }));
+    setStoredValue((prev) => ({ ...(prev ?? {}), [key]: readValue() }));
 
     const handleStorageChange = (): void => {
       setStoredValue((prev) => ({ ...prev, [key]: readValue() }));

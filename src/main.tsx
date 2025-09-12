@@ -5,6 +5,7 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
 import { Provider } from "@/components/ui/provider.tsx";
+import { Toaster } from "@/components/ui/toaster";
 
 const router = createRouter({ routeTree });
 
@@ -18,6 +19,7 @@ declare module "@tanstack/react-router" {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider>
+      <Toaster />
       <RouterProvider router={router} />
     </Provider>
   </StrictMode>

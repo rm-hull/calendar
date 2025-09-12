@@ -36,7 +36,7 @@ function RouteComponent() {
 
   return (
     <Backdrop>
-      <Tabs.Root defaultValue="selected">
+      <Tabs.Root defaultValue="selected" colorPalette="orange">
         <Tabs.List
           position="sticky"
           top={0}

@@ -6,7 +6,9 @@
 
   header,
   footer,
-  nav {
+  nav,
+  div[data-scope="toast"],
+  div[data-scope="dialog"] {
     display: none !important;
   }
 

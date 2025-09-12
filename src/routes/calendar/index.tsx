@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import YearCalendar from "@/components/YearCalendar";
 import Backdrop from "@/components/Backdrop";
 import { fetchCalendarEvents } from "@/services/calendar-events";
-import { isStartDay } from "@/types/start-day";
 
 export const Route = createFileRoute("/calendar/")({
   component: CurrentYear,
@@ -19,18 +18,14 @@ export const Route = createFileRoute("/calendar/")({
 
     return fetchCalendarEvents(startDate, endDate, languages);
   },
-  validateSearch: (search: Record<string, unknown>) => ({
-    startDay: isStartDay(search.startDay) ? search.startDay : undefined,
-  }),
 });
 
 function CurrentYear() {
   const events = Route.useLoaderData();
-  const { startDay } = Route.useSearch();
 
   return (
     <Backdrop>
-      <YearCalendar events={events} startDay={startDay} />
+      <YearCalendar events={events} />
     </Backdrop>
   );
 }

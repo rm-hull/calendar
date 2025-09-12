@@ -2,6 +2,8 @@ import { Flex } from "@chakra-ui/react";
 import MonthCalendar from "@/components/MonthCalendar";
 import { type CalendarEvents } from "@/types/events";
 import { type StartDay } from "@/types/start-day";
+import { SettingsDialog } from "./settings/SettingsDialog";
+import { useGeneralSettings } from "@/hooks/useGeneralSettings";
 
 type CalendarMonth = {
   year: number;
@@ -39,18 +41,19 @@ export default function YearCalendar({
   month,
   year,
   events,
-  startDay = "sun",
 }: YearCalendarProps) {
+  const [settings] = useGeneralSettings();
   const gen = yearGenerator(year, month);
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 
   return (
     <Flex className="year-view" flexWrap="wrap" gap={6} justifyContent="center">
+      <SettingsDialog />
       {first12.map((props, index) => (
         <MonthCalendar
           key={index}
           events={events}
-          startDay={startDay}
+          startDay={settings?.startDay ?? "mon"}
           {...props}
         />
       ))}

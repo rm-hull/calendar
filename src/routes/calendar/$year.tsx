@@ -1,14 +1,10 @@
 import Backdrop from "@/components/Backdrop";
 import YearCalendar from "@/components/YearCalendar";
 import { fetchCalendarEvents } from "@/services/calendar-events";
-import { isStartDay } from "@/types/start-day";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/calendar/$year")({
   component: SpecificYear,
-  validateSearch: (search: Record<string, unknown>) => ({
-    startDay: isStartDay(search.startDay) ? search.startDay : undefined,
-  }),
   loader: (context) => {
     const searchParams = new URLSearchParams(context.location.search);
     const languages = searchParams.get("languages")?.split(",") || [
@@ -24,7 +20,6 @@ export const Route = createFileRoute("/calendar/$year")({
 function SpecificYear() {
   const events = Route.useLoaderData();
   const { year } = Route.useParams();
-  const { startDay } = Route.useSearch();
 
   return (
     <Backdrop>
@@ -32,7 +27,6 @@ function SpecificYear() {
         month={1}
         year={parseInt(year)}
         events={events}
-        startDay={startDay}
       />
     </Backdrop>
   );

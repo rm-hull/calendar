@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toaster } from "@/components/ui/toaster";
 import {
   Button,
@@ -38,6 +38,7 @@ function ToastDescription() {
 }
 
 export function SettingsDialog() {
+  const ref = useRef<HTMLButtonElement | null>(null);
   const [open, setOpen] = useState(false);
   const [settings] = useGeneralSettings();
 
@@ -60,9 +61,7 @@ export function SettingsDialog() {
           duration: 15_000,
           action: {
             label: "Open now",
-            onClick: () => {
-              setOpen(true);
-            },
+            onClick: () => setOpen(true),
           },
         }),
       1_500
@@ -78,6 +77,7 @@ export function SettingsDialog() {
       open={open}
       onOpenChange={(e) => setOpen(e.open)}
       scrollBehavior="inside"
+      initialFocusEl={() => ref.current}
     >
       <Portal>
         <Dialog.Backdrop />
@@ -108,7 +108,7 @@ export function SettingsDialog() {
 
               <Dialog.Footer>
                 <Dialog.ActionTrigger asChild>
-                  <Button variant="subtle" colorPalette="orange">
+                  <Button variant="subtle" ref={ref}>
                     Close
                   </Button>
                 </Dialog.ActionTrigger>

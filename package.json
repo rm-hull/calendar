@@ -30,7 +30,7 @@
     "@tanstack/eslint-plugin-router": "^1.131.2",
     "@tanstack/react-router-devtools": "^1.131.44",
     "@tanstack/router-core": "^1.131.44",
-    "@tanstack/router-plugin": "^1.131.44",
+    "@tanstack/router-plugin": "^1.131.48",
     "@types/node": "^24.5.1",
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.1.13",

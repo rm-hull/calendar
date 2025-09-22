@@ -2246,6 +2246,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/types@npm:^8.44.1":
+  version: 8.44.1
+  resolution: "@typescript-eslint/types@npm:8.44.1"
+  checksum: 10/acebff929b2c64254c430fff54d8d135c9f47bcc20062fd3e52f64952b0ef973db9582812025f5314940889ae4c4a8798726a477b94fbda31881109687567528
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/typescript-estree@npm:8.36.0":
   version: 8.36.0
   resolution: "@typescript-eslint/typescript-estree@npm:8.36.0"
@@ -5222,7 +5229,7 @@ __metadata:
     "@types/react": "npm:^19.1.13"
     "@types/react-dom": "npm:^19.1.9"
     "@types/react-responsive-masonry": "npm:^2.6.0"
-    "@typescript-eslint/types": "npm:^8.44.0"
+    "@typescript-eslint/types": "npm:^8.44.1"
     "@vitejs/plugin-react": "npm:^5.0.3"
     "@vitest/coverage-v8": "npm:3.2.4"
     babel-plugin-react-compiler: "npm:19.1.0-rc.3"

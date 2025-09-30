@@ -1788,6 +1788,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/history@npm:1.132.21":
+  version: 1.132.21
+  resolution: "@tanstack/history@npm:1.132.21"
+  checksum: 10/7dba35b1f2a785e81a10a4c4101f54c6c7435b4aa2480aea25991858f940cf5736aa3cdc688c9f56e40cee78b78e48088d6fa819775f4abf91664f4b4c8bcc9d
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-router-devtools@npm:^1.132.7":
   version: 1.132.7
   resolution: "@tanstack/react-router-devtools@npm:1.132.7"
@@ -1802,20 +1809,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-router@npm:^1.132.7":
-  version: 1.132.7
-  resolution: "@tanstack/react-router@npm:1.132.7"
+"@tanstack/react-router@npm:^1.132.26":
+  version: 1.132.26
+  resolution: "@tanstack/react-router@npm:1.132.26"
   dependencies:
-    "@tanstack/history": "npm:1.132.0"
+    "@tanstack/history": "npm:1.132.21"
     "@tanstack/react-store": "npm:^0.7.0"
-    "@tanstack/router-core": "npm:1.132.7"
+    "@tanstack/router-core": "npm:1.132.26"
     isbot: "npm:^5.1.22"
     tiny-invariant: "npm:^1.3.3"
     tiny-warning: "npm:^1.0.3"
   peerDependencies:
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
-  checksum: 10/7becab7eadcd7e19f9427c748753aa01ac4a7b8e362f954693f4838c38428b0624d313f18b71e9a5f4840ad5cd6ee91da8f510be60aa978bb783b9f563752947
+  checksum: 10/e9b1e3979459ed199ba397523f7b86b9a897dbfbcd2c4cb2a0f032dc6aea52c742ac9839c003dcacc7f300c7197e995c172fcb226f89b0f0b6a3222a9e43bb07
   languageName: node
   linkType: hard
 
@@ -1829,6 +1836,21 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 10/006097295588c0b8ec00af99d7bbe254fd196cac459070ba222cf541379cd6ac0c8640db57fe7429594a249530e4f45dd201407c10fbf930e18087121ebf6cc1
+  languageName: node
+  linkType: hard
+
+"@tanstack/router-core@npm:1.132.26":
+  version: 1.132.26
+  resolution: "@tanstack/router-core@npm:1.132.26"
+  dependencies:
+    "@tanstack/history": "npm:1.132.21"
+    "@tanstack/store": "npm:^0.7.0"
+    cookie-es: "npm:^2.0.0"
+    seroval: "npm:^1.3.2"
+    seroval-plugins: "npm:^1.3.2"
+    tiny-invariant: "npm:^1.3.3"
+    tiny-warning: "npm:^1.0.3"
+  checksum: 10/6cf742eb2e03017a7714384d36d9e87d71609d9c83bf021b6a19bcf41de7c6b70bc378b33b5de2b81589095aad1790cbc30ea2a17d9b2998d140f250415cd3c4
   languageName: node
   linkType: hard
 
@@ -5217,7 +5239,7 @@ __metadata:
     "@emotion/react": "npm:^11.14.0"
     "@eslint/js": "npm:^9.36.0"
     "@tanstack/eslint-plugin-router": "npm:^1.132.0"
-    "@tanstack/react-router": "npm:^1.132.7"
+    "@tanstack/react-router": "npm:^1.132.26"
     "@tanstack/react-router-devtools": "npm:^1.132.7"
     "@tanstack/router-core": "npm:^1.132.7"
     "@tanstack/router-plugin": "npm:^1.132.7"

@@ -1790,17 +1790,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-router-devtools@npm:^1.132.41":
-  version: 1.132.41
-  resolution: "@tanstack/react-router-devtools@npm:1.132.41"
+"@tanstack/react-router-devtools@npm:^1.132.45":
+  version: 1.132.45
+  resolution: "@tanstack/react-router-devtools@npm:1.132.45"
   dependencies:
-    "@tanstack/router-devtools-core": "npm:1.132.41"
+    "@tanstack/router-devtools-core": "npm:1.132.45"
     vite: "npm:^7.1.7"
   peerDependencies:
-    "@tanstack/react-router": ^1.132.41
+    "@tanstack/react-router": ^1.132.45
     react: ">=18.0.0 || >=19.0.0"
     react-dom: ">=18.0.0 || >=19.0.0"
-  checksum: 10/3205ba69bc6cec4139689229e66930222c78f5a65318fcf95c624da69673f2931d0be5e66a15e1bf2990f966512dca6947401da1d43853dca5f2eac928164aad
+  checksum: 10/6be3ae3a9a5539e899a3ce99d8c37c02d965d7f0cab22febb130b428c9fb25130c6909c53b0fd6c4e9c8dc0df9e21ca11c9755d9db56fe68a7ad173470cd7733
   languageName: node
   linkType: hard
 
@@ -1849,23 +1849,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/router-devtools-core@npm:1.132.41":
-  version: 1.132.41
-  resolution: "@tanstack/router-devtools-core@npm:1.132.41"
+"@tanstack/router-devtools-core@npm:1.132.45":
+  version: 1.132.45
+  resolution: "@tanstack/router-devtools-core@npm:1.132.45"
   dependencies:
     clsx: "npm:^2.1.1"
     goober: "npm:^2.1.16"
-    solid-js: "npm:^1.9.5"
     vite: "npm:^7.1.7"
   peerDependencies:
-    "@tanstack/router-core": ^1.132.41
+    "@tanstack/router-core": ^1.132.45
     csstype: ^3.0.10
-    solid-js: ">=1.9.5"
     tiny-invariant: ^1.3.3
   peerDependenciesMeta:
     csstype:
       optional: true
-  checksum: 10/f45fa0bb8a8ffe37c26b7940e35baae9ecf1dadbfa1a4f34ba2e47dde6c628f8619660aa5c9511bbde3121b3a4f1b49e76d93e4c61d03fb63c35103c7566770d
+  checksum: 10/9bfab77502ddf206f14d5dbc8cce643bc642232bf419028c908ed4a745ef02140818b6256bcdfe4245e22d86a8a76417f5e71c3dfd58375f962ca82cd68842da
   languageName: node
   linkType: hard
 
@@ -3800,7 +3798,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:3.1.3, csstype@npm:^3.0.2, csstype@npm:^3.1.0, csstype@npm:^3.1.2, csstype@npm:^3.1.3":
+"csstype@npm:3.1.3, csstype@npm:^3.0.2, csstype@npm:^3.1.2, csstype@npm:^3.1.3":
   version: 3.1.3
   resolution: "csstype@npm:3.1.3"
   checksum: 10/f593cce41ff5ade23f44e77521e3a1bcc2c64107041e1bf6c3c32adc5187d0d60983292fda326154d20b01079e24931aa5b08e4467cc488b60bb1e7f6d478ade
@@ -5225,7 +5223,7 @@ __metadata:
     "@eslint/js": "npm:^9.37.0"
     "@tanstack/eslint-plugin-router": "npm:^1.132.31"
     "@tanstack/react-router": "npm:^1.132.41"
-    "@tanstack/react-router-devtools": "npm:^1.132.41"
+    "@tanstack/react-router-devtools": "npm:^1.132.45"
     "@tanstack/router-core": "npm:^1.132.41"
     "@tanstack/router-plugin": "npm:^1.132.41"
     "@types/node": "npm:^24.7.0"
@@ -6071,28 +6069,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"seroval-plugins@npm:^1.1.0":
-  version: 1.2.1
-  resolution: "seroval-plugins@npm:1.2.1"
-  peerDependencies:
-    seroval: ^1.0
-  checksum: 10/d43c59134e39239970adb4805eeb0a3912f90df2c96e7efee235cd9f4822a25fd64192a40e3b1694fe5eb81ffb36b59bf6512a6fb0b39570e177f39a1536581b
-  languageName: node
-  linkType: hard
-
 "seroval-plugins@npm:^1.3.2":
   version: 1.3.2
   resolution: "seroval-plugins@npm:1.3.2"
   peerDependencies:
     seroval: ^1.0
   checksum: 10/39f17c3edaf9f15db15dbdd8fb0bb76528db56639799e0dc10821bb8f0151e188ffa9730512120bf155a099b4152bc9f9fc33e4caeb6ce4ea98104e382c5066f
-  languageName: node
-  linkType: hard
-
-"seroval@npm:^1.1.0":
-  version: 1.2.1
-  resolution: "seroval@npm:1.2.1"
-  checksum: 10/02d7c4ad3b02cb56a4dc45b1a9224bec4a1b44cc6330a3bd3ac3f989fd09fa8a059aa77c8bff0e216718fa77a68eea50ca5b4a3cf1967b21a550e228dc00c456
   languageName: node
   linkType: hard
 
@@ -6179,17 +6161,6 @@ __metadata:
     ip-address: "npm:^9.0.5"
     smart-buffer: "npm:^4.2.0"
   checksum: 10/ab3af97aeb162f32c80e176c717ccf16a11a6ebb4656a62b94c0f96495ea2a1f4a8206c04b54438558485d83d0c5f61920c07a1a5d3963892a589b40cc6107dd
-  languageName: node
-  linkType: hard
-
-"solid-js@npm:^1.9.5":
-  version: 1.9.6
-  resolution: "solid-js@npm:1.9.6"
-  dependencies:
-    csstype: "npm:^3.1.0"
-    seroval: "npm:^1.1.0"
-    seroval-plugins: "npm:^1.1.0"
-  checksum: 10/f2520fc6f70a6c11322d756d8a257610170ccc447076baa1ec06d9befd518cbcd117641cbd54d2cc4311d4725415d02e59b35e3a53086912cc7a73b4466a2879
   languageName: node
   linkType: hard
 

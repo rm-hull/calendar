@@ -48,7 +48,7 @@ export default function MonthCalendar({
   events,
   startDay = "sun",
 }: MonthCalendarProps) {
-  const [settings] = useGeneralSettings();
+  const { settings } = useGeneralSettings();
   const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
   const monthName = new Date(date).toLocaleString(locale, { month: "long" });

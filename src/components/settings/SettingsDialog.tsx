@@ -40,7 +40,7 @@ function ToastDescription() {
 export function SettingsDialog() {
   const ref = useRef<HTMLButtonElement | null>(null);
   const [open, setOpen] = useState(false);
-  const [settings] = useGeneralSettings();
+  const { settings } = useGeneralSettings();
 
   useKey(".", (event) => {
     if (event.metaKey || event.ctrlKey) {

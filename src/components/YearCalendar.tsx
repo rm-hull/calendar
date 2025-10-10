@@ -42,7 +42,7 @@ export default function YearCalendar({
   year,
   events,
 }: YearCalendarProps) {
-  const [settings] = useGeneralSettings();
+  const { settings } = useGeneralSettings();
   const gen = yearGenerator(year, month);
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 

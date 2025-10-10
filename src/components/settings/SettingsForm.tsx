@@ -3,7 +3,7 @@ import { isStartDay } from "@/types/start-day";
 import { Field, HStack, RadioGroup, Switch, VStack } from "@chakra-ui/react";
 
 export function SettingsForm() {
-  const [settings, updateSettings] = useGeneralSettings();
+  const {settings, updateSettings } = useGeneralSettings();
 
   const handleUpdateStartDay = (day: string | null) => {
     if (isStartDay(day)) {

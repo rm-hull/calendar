@@ -22,16 +22,10 @@ function getDays(startDay: StartDay) {
   });
 }
 
-function isDate(
-  date: Date
-): (day: number | null, month: number, year: number) => boolean {
+function isDate(date: Date): (day: number | null, month: number, year: number) => boolean {
   return (day, month, year) => {
     if (!day) return false;
-    return (
-      date.getFullYear() === year &&
-      date.getMonth() + 1 === month &&
-      date.getDate() === day
-    );
+    return date.getFullYear() === year && date.getMonth() + 1 === month && date.getDate() === day;
   };
 }
 
@@ -42,12 +36,7 @@ function isWeekend(day: number | null, month: number, year: number): boolean {
   return dayOfWeek === 0 || dayOfWeek === 6; // Sunday or Saturday
 }
 
-export default function MonthCalendar({
-  month,
-  year,
-  events,
-  startDay = "sun",
-}: MonthCalendarProps) {
+export default function MonthCalendar({ month, year, events, startDay = "sun" }: MonthCalendarProps) {
   const { settings } = useGeneralSettings();
   const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
@@ -60,8 +49,7 @@ export default function MonthCalendar({
 
   // Calculate the offset for the first day of the month
   // JS getDay(): 0=Sun, 1=Mon, ..., 6=Sat
-  const offset =
-    startDay === "mon" ? (firstDayOfMonth + 6) % 7 : firstDayOfMonth;
+  const offset = startDay === "mon" ? (firstDayOfMonth + 6) % 7 : firstDayOfMonth;
 
   const totalDays = 35; // 5 rows * 7 days
   const cells: (number | null)[] = Array(totalDays).fill(null);
@@ -76,12 +64,7 @@ export default function MonthCalendar({
   return (
     <Card.Root className="month-view">
       <Card.Header p={2}>
-        <Text
-          textAlign="center"
-          fontSize="lg"
-          fontWeight="bold"
-          color="gray.500"
-        >
+        <Text textAlign="center" fontSize="lg" fontWeight="bold" color="gray.500">
           {monthName} {year}
         </Text>
       </Card.Header>
@@ -105,20 +88,11 @@ export default function MonthCalendar({
                 p={2}
                 height={9}
                 background={
-                  settings?.showBackgroundColorForWeekend &&
-                  isWeekend(day, month, year)
-                    ? "gray.100"
-                    : undefined
+                  settings?.showBackgroundColorForWeekend && isWeekend(day, month, year) ? "gray.100" : undefined
                 }
               >
                 {day && (
-                  <Cell
-                    day={day}
-                    month={month}
-                    year={year}
-                    isToday={isToday(day, month, year)}
-                    events={events}
-                  />
+                  <Cell day={day} month={month} year={year} isToday={isToday(day, month, year)} events={events} />
                 )}
               </GridItem>
             );

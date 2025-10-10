@@ -37,11 +37,7 @@ interface YearCalendarProps extends Partial<CalendarMonth> {
   events: CalendarEvents;
 }
 
-export default function YearCalendar({
-  month,
-  year,
-  events,
-}: YearCalendarProps) {
+export default function YearCalendar({ month, year, events }: YearCalendarProps) {
   const { settings } = useGeneralSettings();
   const gen = yearGenerator(year, month);
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
@@ -50,12 +46,7 @@ export default function YearCalendar({
     <Flex className="year-view" flexWrap="wrap" gap={6} justifyContent="center">
       <SettingsDialog />
       {first12.map((props, index) => (
-        <MonthCalendar
-          key={index}
-          events={events}
-          startDay={settings?.startDay ?? "mon"}
-          {...props}
-        />
+        <MonthCalendar key={index} events={events} startDay={settings?.startDay ?? "mon"} {...props} />
       ))}
     </Flex>
   );

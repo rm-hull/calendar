@@ -14,9 +14,7 @@ type UseGeneralSettingsReturnType = {
 };
 
 export function useGeneralSettings(): UseGeneralSettingsReturnType {
-  const { value, setValue, isLoading } = useLocalStorage<GeneralSettings>(
-    "calendar.general-settings"
-  );
+  const { value, setValue, isLoading } = useLocalStorage<GeneralSettings>("calendar.general-settings");
   return {
     settings: value,
     updateSettings: setValue,

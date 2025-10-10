@@ -1,16 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { toaster } from "@/components/ui/toaster";
-import {
-  Button,
-  CloseButton,
-  Dialog,
-  HStack,
-  Icon,
-  Kbd,
-  Portal,
-  Tabs,
-  Text,
-} from "@chakra-ui/react";
+import { Button, CloseButton, Dialog, HStack, Icon, Kbd, Portal, Tabs, Text } from "@chakra-ui/react";
 import { IoInformationCircleSharp } from "react-icons/io5";
 import { useKey } from "react-use";
 import { SettingsForm } from "./SettingsForm";
@@ -30,8 +20,7 @@ function ToastDescription() {
         <IoInformationCircleSharp />
       </Icon>
       <Text>
-        Settings can be accessed by pressing: <Kbd>{commandPrefix}</Kbd> +{" "}
-        <Kbd>.</Kbd>
+        Settings can be accessed by pressing: <Kbd>{commandPrefix}</Kbd> + <Kbd>.</Kbd>
       </Text>
     </HStack>
   );

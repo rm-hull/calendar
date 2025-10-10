@@ -7,9 +7,7 @@ export const Route = createFileRoute("/calendar/$year")({
   component: SpecificYear,
   loader: (context) => {
     const searchParams = new URLSearchParams(context.location.search);
-    const languages = searchParams.get("languages")?.split(",") || [
-      navigator.language,
-    ];
+    const languages = searchParams.get("languages")?.split(",") || [navigator.language];
 
     const startDate = new Date(parseInt(context.params.year), 0, 1);
     const endDate = new Date(parseInt(context.params.year), 11, 31);
@@ -23,11 +21,7 @@ function SpecificYear() {
 
   return (
     <Backdrop>
-      <YearCalendar
-        month={1}
-        year={parseInt(year)}
-        events={events}
-      />
+      <YearCalendar month={1} year={parseInt(year)} events={events} />
     </Backdrop>
   );
 }

@@ -3,7 +3,7 @@ import { isStartDay } from "@/types/start-day";
 import { Field, HStack, RadioGroup, Switch, VStack } from "@chakra-ui/react";
 
 export function SettingsForm() {
-  const {settings, updateSettings } = useGeneralSettings();
+  const { settings, updateSettings } = useGeneralSettings();
 
   const handleUpdateStartDay = (day: string | null) => {
     if (isStartDay(day)) {
@@ -30,10 +30,7 @@ export function SettingsForm() {
       <Field.Root>
         <HStack>
           <Field.Label width={75}>Start Day:</Field.Label>
-          <RadioGroup.Root
-            onValueChange={(e) => handleUpdateStartDay(e.value)}
-            value={settings?.startDay ?? "mon"}
-          >
+          <RadioGroup.Root onValueChange={(e) => handleUpdateStartDay(e.value)} value={settings?.startDay ?? "mon"}>
             <HStack align="left">
               <RadioGroup.Item value="mon">
                 <RadioGroup.ItemHiddenInput />
@@ -52,9 +49,7 @@ export function SettingsForm() {
 
       <Field.Root>
         <HStack alignItems="start">
-          <Field.Label width={170}>
-            Show background colour for weekend?
-          </Field.Label>
+          <Field.Label width={170}>Show background colour for weekend?</Field.Label>
           <Switch.Root
             checked={settings?.showBackgroundColorForWeekend}
             onChange={handleUpdateBackgroundColorForWeekend}
@@ -70,10 +65,7 @@ export function SettingsForm() {
       <Field.Root>
         <HStack alignItems="top">
           <Field.Label width={170}>Show tips on start-up?</Field.Label>
-          <Switch.Root
-            checked={settings?.showTipsOnStartup ?? true}
-            onChange={handleUpdateTipsOnStartup}
-          >
+          <Switch.Root checked={settings?.showTipsOnStartup ?? true} onChange={handleUpdateTipsOnStartup}>
             <Switch.HiddenInput />
             <Switch.Control>
               <Switch.Thumb />

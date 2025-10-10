@@ -37,25 +37,13 @@ function RouteComponent() {
   return (
     <Backdrop>
       <Tabs.Root defaultValue="selected" colorPalette="orange">
-        <Tabs.List
-          position="sticky"
-          top={0}
-          background={useColorModeValue("orange.50", "gray.900")}
-          zIndex={1}
-        >
+        <Tabs.List position="sticky" top={0} background={useColorModeValue("orange.50", "gray.900")} zIndex={1}>
           {Object.keys(onThisDay).map((tab, index) => {
             const values = (onThisDay as never)[tab] as OnThisDayCollection;
-            const disabled =
-              (Array.isArray(values) && values.length === 0) ||
-              Object.keys(values).length === 0;
+            const disabled = (Array.isArray(values) && values.length === 0) || Object.keys(values).length === 0;
 
             return (
-              <Tabs.Trigger
-                key={`tab_trigger_${index}`}
-                value={tab}
-                disabled={disabled}
-                onClick={scrollToTopOfPage}
-              >
+              <Tabs.Trigger key={`tab_trigger_${index}`} value={tab} disabled={disabled} onClick={scrollToTopOfPage}>
                 <Text textTransform="capitalize">{tab}</Text>
               </Tabs.Trigger>
             );
@@ -69,9 +57,7 @@ function RouteComponent() {
                 <ResponsiveMasonry>
                   <Masonry>
                     {Array.isArray(values) ? (
-                      values.map((event, index) => (
-                        <WikimediaEvent key={index} {...event} />
-                      ))
+                      values.map((event, index) => <WikimediaEvent key={index} {...event} />)
                     ) : (
                       <Text>No data</Text>
                     )}

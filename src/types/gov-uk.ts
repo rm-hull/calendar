@@ -15,21 +15,18 @@ type PublicHoliday = {
 export type UkBankHolidays = Record<string, Region>;
 
 export const govUkToEvents = (bankHolidays: UkBankHolidays): CalendarEvents => {
-  return Object.values(bankHolidays).reduce(
-    (events: CalendarEvents, region) => {
-      region.events.forEach((holiday) => {
-        const event: CalendarEvent = {
-          title: holiday.title,
-          date: holiday.date,
-          notes: holiday.notes,
-          region: region.division,
-          language: "en-GB",
-        };
+  return Object.values(bankHolidays).reduce((events: CalendarEvents, region) => {
+    region.events.forEach((holiday) => {
+      const event: CalendarEvent = {
+        title: holiday.title,
+        date: holiday.date,
+        notes: holiday.notes,
+        region: region.division,
+        language: "en-GB",
+      };
 
-        events[holiday.date] = [...(events[holiday.date] || []), event];
-      });
-      return events;
-    },
-    {}
-  );
+      events[holiday.date] = [...(events[holiday.date] || []), event];
+    });
+    return events;
+  }, {});
 };

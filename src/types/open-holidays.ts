@@ -10,13 +10,7 @@ export type HolidayResponse = {
   subdivisions: SubdivisionReference[];
   regionalScope: "National" | "Regional" | "Local";
   temporalScope: "FullDay" | "HalfDay";
-  type:
-    | "Public"
-    | "Bank"
-    | "Optional"
-    | "School"
-    | "BackToSchool"
-    | "EndOfLessons";
+  type: "Public" | "Bank" | "Optional" | "School" | "BackToSchool" | "EndOfLessons";
 };
 
 type LocalizedText = {
@@ -29,14 +23,9 @@ type SubdivisionReference = {
   shortName: string;
 };
 
-export const openHolidaysToEvents = (
-  holidays: HolidayResponse[],
-  language: string
-): CalendarEvents => {
+export const openHolidaysToEvents = (holidays: HolidayResponse[], language: string): CalendarEvents => {
   return holidays.reduce((acc: CalendarEvents, holiday) => {
-    const endDate = holiday.endDate
-      ? new Date(holiday.endDate)
-      : new Date(holiday.startDate);
+    const endDate = holiday.endDate ? new Date(holiday.endDate) : new Date(holiday.startDate);
     const currentDate = new Date(holiday.startDate);
 
     while (currentDate <= endDate) {

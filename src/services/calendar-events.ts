@@ -9,9 +9,7 @@ export async function fetchCalendarEvents(
   to: Date,
   languages = [navigator.language]
 ): Promise<CalendarEvents> {
-  const processPublicHolidays = async (
-    lang: string
-  ): Promise<CalendarEvents> => {
+  const processPublicHolidays = async (lang: string): Promise<CalendarEvents> => {
     try {
       const [languageIsoCode, countryIsoCode] = lang.split("-");
       if (!countryIsoCode) {
@@ -22,10 +20,7 @@ export async function fetchCalendarEvents(
         return govUkToEvents(await fetchUkBankHolidays());
       }
 
-      return openHolidaysToEvents(
-        await fetchOpenHolidays(countryIsoCode, languageIsoCode, from, to),
-        lang
-      );
+      return openHolidaysToEvents(await fetchOpenHolidays(countryIsoCode, languageIsoCode, from, to), lang);
     } catch (err) {
       console.log({ lang, err });
       return {};

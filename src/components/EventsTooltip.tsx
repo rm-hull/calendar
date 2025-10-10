@@ -19,10 +19,7 @@ function blurb(event: EventGroup[string]): string {
   return `${event.title} (${event.language}: ${event.regions.join(", ")})`;
 }
 
-export default function EventsTooltip({
-  children,
-  events: originalEvents,
-}: PropsWithChildren<EventsTooltipProps>) {
+export default function EventsTooltip({ children, events: originalEvents }: PropsWithChildren<EventsTooltipProps>) {
   if (!originalEvents) {
     return children;
   }

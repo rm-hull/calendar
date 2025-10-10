@@ -29,8 +29,9 @@ jobs:
         run: |
           yarn install
 
-      # - name: Lint
-      #   run: yarn lint
+      - name: Lint
+        run: yarn lint
+        continue-on-error: true
 
       - name: Test
         run: yarn test:ci

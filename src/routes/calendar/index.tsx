@@ -6,9 +6,7 @@ import { fetchCalendarEvents } from "@/services/calendar-events";
 export const Route = createFileRoute("/calendar/")({
   component: CurrentYear,
   loader: (context) => {
-    const languages = new URLSearchParams(context.location.search)
-      .get("languages")
-      ?.split(",") || [navigator.language];
+    const languages = new URLSearchParams(context.location.search).get("languages")?.split(",") || [navigator.language];
 
     const now = new Date();
     const currentYear = now.getFullYear();

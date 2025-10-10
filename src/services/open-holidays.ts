@@ -21,9 +21,7 @@ export async function fetchOpenHolidays(
 
   if (!response.ok) {
     console.error(response.text);
-    throw new Error(
-      `Failed to fetch openholidaysapi data for from ${from} to ${to} for ${countryIsoCode}`
-    );
+    throw new Error(`Failed to fetch openholidaysapi data for from ${from} to ${to} for ${countryIsoCode}`);
   }
   return response.json();
 }

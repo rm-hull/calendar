@@ -8,12 +8,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
-  process.env.VITE_GIT_COMMIT_DATE = execSync("git log -1 --format=%cI")
-    .toString()
-    .trimEnd();
-  process.env.VITE_GIT_COMMIT_HASH = execSync("git describe --always --dirty")
-    .toString()
-    .trimEnd();
+  process.env.VITE_GIT_COMMIT_DATE = execSync("git log -1 --format=%cI").toString().trimEnd();
+  process.env.VITE_GIT_COMMIT_HASH = execSync("git describe --always --dirty").toString().trimEnd();
 
   return {
     plugins: [
@@ -22,5 +18,8 @@ export default defineConfig(() => {
       viteReact({ babel: { plugins: ["babel-plugin-react-compiler"] } }),
     ],
     base: "/calendar",
+    build: {
+      sourcemap: true,
+    },
   };
 });

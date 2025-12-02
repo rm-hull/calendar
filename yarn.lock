@@ -1743,12 +1743,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-responsive-masonry@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "@types/react-responsive-masonry@npm:2.6.0"
+"@types/react-responsive-masonry@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "@types/react-responsive-masonry@npm:2.7.0"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10/110c690416afe0b42eff53321f356e511f904625d2f72db0d516a2fdefcdac95f2f5edbc3a48c5fe9db020678b24f74666aaef2a508f314d5114c27290824e90
+  checksum: 10/769b9e7d8b1844ed0a561e7657871c3051087597afe6677dfc0b12ad0d5d8a57d37b99f921ab700a5be1cc47ed7f453149670ad9680b148340c5ac02571afe60
   languageName: node
   linkType: hard
 
@@ -4955,7 +4955,7 @@ __metadata:
     "@types/prop-types": "npm:^15.7.15"
     "@types/react": "npm:^19.2.7"
     "@types/react-dom": "npm:^19.2.3"
-    "@types/react-responsive-masonry": "npm:^2.6.0"
+    "@types/react-responsive-masonry": "npm:^2.7.0"
     "@typescript-eslint/types": "npm:^8.48.1"
     "@vitejs/plugin-react": "npm:^5.1.1"
     "@vitest/coverage-v8": "npm:4.0.15"

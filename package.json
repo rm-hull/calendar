@@ -16,7 +16,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.30.0",
     "@emotion/react": "^11.14.0",
-    "@rm-hull/chakra-error-fallback": "^0.0.5",
+    "@rm-hull/chakra-error-fallback": "^0.0.12",
     "@rm-hull/use-local-storage": "^0.3.3",
     "@tanstack/react-router": "^1.139.12",
     "jotai": "^2.15.2",

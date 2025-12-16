@@ -1,9 +1,9 @@
-import { CalendarEvents } from "@/types/events";
+import { CalendarEvents } from "../types/events";
 import { Link, Text } from "@chakra-ui/react";
 import { Link as RouterLink } from "@tanstack/react-router";
 import { useColorModeValue } from "./ui/color-mode";
-import { Route as wikimediaRoute } from "@/routes/calendar/on-this-day.$month.$day";
-import { pad } from "@/utils";
+import { Route as wikimediaRoute } from "../routes/calendar/on-this-day.$month.$day";
+import { pad } from "../utils";
 import EventsTooltip from "./EventsTooltip";
 
 type CellProps = {

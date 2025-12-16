@@ -1,4 +1,4 @@
-import { CalendarEvent } from "@/types/events";
+import { CalendarEvent } from "../types/events";
 import { PropsWithChildren } from "react";
 import { Tooltip } from "./ui/tooltip";
 

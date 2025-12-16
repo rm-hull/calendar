@@ -1,4 +1,4 @@
-import { OnThisDayEvent } from "@/types/wikimedia";
+import { OnThisDayEvent } from "../types/wikimedia";
 import { Card, Heading, Image, Link, Text } from "@chakra-ui/react";
 import { Fragment } from "react";
 

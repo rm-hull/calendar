@@ -1,4 +1,4 @@
-import { OnThisDayAllResponse } from "@/types/wikimedia";
+import { OnThisDayAllResponse } from "../types/wikimedia";
 
 export async function fetchOnThisDay(month: string, day: string): Promise<OnThisDayAllResponse> {
   const locale = navigator.language.split("-")[0];

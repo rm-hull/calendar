@@ -1,4 +1,4 @@
-import { UkBankHolidays } from "@/types/gov-uk";
+import { UkBankHolidays } from "../types/gov-uk";
 
 export async function fetchUkBankHolidays(): Promise<UkBankHolidays> {
   const response = await fetch(`https://www.gov.uk/bank-holidays.json`, {

@@ -1,9 +1,9 @@
 import { Card, Grid, GridItem, Text } from "@chakra-ui/react";
-import { type CalendarEvents } from "@/types/events";
-import { type StartDay } from "@/types/start-day";
+import { type CalendarEvents } from "../types/events";
+import { type StartDay } from "../types/start-day";
 import Cell from "./Cell";
 import { useMemo } from "react";
-import { useGeneralSettings } from "@/hooks/useGeneralSettings";
+import { useGeneralSettings } from "../hooks/useGeneralSettings";
 
 export type MonthCalendarProps = {
   month: number;

@@ -1,4 +1,4 @@
-import { HolidayResponse } from "@/types/open-holidays";
+import { HolidayResponse } from "../types/open-holidays";
 
 export async function fetchOpenHolidays(
   countryIsoCode: string,

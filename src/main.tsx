@@ -4,8 +4,8 @@ import { createRoot } from "react-dom/client";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
-import { Provider } from "@/components/ui/provider.tsx";
-import { Toaster } from "@/components/ui/toaster";
+import { Provider } from "./components/ui/provider.tsx";
+import { Toaster } from "./components/ui/toaster";
 
 const router = createRouter({ routeTree });
 

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import YearCalendar from "@/components/YearCalendar";
-import Backdrop from "@/components/Backdrop";
-import { fetchCalendarEvents } from "@/services/calendar-events";
+import YearCalendar from "../../components/YearCalendar";
+import Backdrop from "../../components/Backdrop";
+import { fetchCalendarEvents } from "../../services/calendar-events";
 
 export const Route = createFileRoute("/calendar/")({
   component: CurrentYear,

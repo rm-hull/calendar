@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { toaster } from "@/components/ui/toaster";
+import { toaster } from "../ui/toaster";
 import { Button, CloseButton, Dialog, HStack, Icon, Kbd, Portal, Tabs, Text } from "@chakra-ui/react";
 import { IoInformationCircleSharp } from "react-icons/io5";
 import { useKey } from "react-use";
 import { SettingsForm } from "./SettingsForm";
 import { About } from "./About";
 import { License } from "./License";
-import { useGeneralSettings } from "@/hooks/useGeneralSettings";
+import { useGeneralSettings } from "../../hooks/useGeneralSettings";
 
 const TOASTER_ID = "settings-toast";
 

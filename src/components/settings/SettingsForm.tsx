@@ -1,5 +1,5 @@
-import { useGeneralSettings } from "@/hooks/useGeneralSettings";
-import { isStartDay } from "@/types/start-day";
+import { useGeneralSettings } from "../../hooks/useGeneralSettings";
+import { isStartDay } from "../../types/start-day";
 import { Field, HStack, RadioGroup, Switch, VStack } from "@chakra-ui/react";
 
 export function SettingsForm() {

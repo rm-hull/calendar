@@ -1,9 +1,9 @@
 import { Flex } from "@chakra-ui/react";
-import MonthCalendar from "@/components/MonthCalendar";
-import { type CalendarEvents } from "@/types/events";
-import { type StartDay } from "@/types/start-day";
+import MonthCalendar from "../components/MonthCalendar";
+import { type CalendarEvents } from "../types/events";
+import { type StartDay } from "../types/start-day";
 import { SettingsDialog } from "./settings/SettingsDialog";
-import { useGeneralSettings } from "@/hooks/useGeneralSettings";
+import { useGeneralSettings } from "../hooks/useGeneralSettings";
 
 type CalendarMonth = {
   year: number;

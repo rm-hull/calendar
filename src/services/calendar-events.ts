@@ -1,8 +1,8 @@
-import { CalendarEvents } from "@/types/events";
+import { CalendarEvents } from "../types/events";
 import { fetchOpenHolidays } from "./open-holidays";
-import { openHolidaysToEvents } from "@/types/open-holidays";
+import { openHolidaysToEvents } from "../types/open-holidays";
 import { fetchUkBankHolidays } from "./gov-uk";
-import { govUkToEvents } from "@/types/gov-uk";
+import { govUkToEvents } from "../types/gov-uk";
 
 export async function fetchCalendarEvents(
   from: Date,

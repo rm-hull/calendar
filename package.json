@@ -34,7 +34,7 @@
     "@tanstack/react-router-devtools": "^1.157.16",
     "@tanstack/router-core": "^1.157.16",
     "@tanstack/router-plugin": "^1.157.16",
-    "@types/node": "^25.0.10",
+    "@types/node": "^25.1.0",
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",

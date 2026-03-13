@@ -2,9 +2,9 @@
 
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import { defineConfig } from "vite";
-import viteReact from "@vitejs/plugin-react";
 import { execSync } from "child_process";
-import tsconfigPaths from "vite-tsconfig-paths";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -12,14 +12,13 @@ export default defineConfig(() => {
   process.env.VITE_GIT_COMMIT_HASH = execSync("git describe --always --dirty").toString().trimEnd();
 
   return {
-    plugins: [
-      tsconfigPaths(),
-      TanStackRouterVite(),
-      viteReact({ babel: { plugins: ["babel-plugin-react-compiler"] } }),
-    ],
+    plugins: [TanStackRouterVite(), react(), babel({ presets: [reactCompilerPreset()] })],
     base: "/calendar",
     build: {
       sourcemap: true,
+    },
+    resolve: {
+      tsconfigPaths: true,
     },
   };
 });

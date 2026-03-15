@@ -5,9 +5,7 @@ import { useGeneralSettings } from "../hooks/useGeneralSettings";
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 import "@testing-library/jest-dom/vitest";
 
-vi.mock("../hooks/useGeneralSettings", () => ({
-  useGeneralSettings: vi.fn(),
-}));
+vi.mock("../hooks/useGeneralSettings");
 
 vi.mock("./Cell", () => ({
   default: ({ day }: { day: number }) => <div>{day}</div>,
@@ -17,8 +15,10 @@ afterEach(cleanup);
 
 describe("MonthCalendar", () => {
   it("should render the month and year", () => {
-    (useGeneralSettings as any).mockReturnValue({
+    vi.mocked(useGeneralSettings).mockReturnValue({
       settings: { showBackgroundColorForWeekend: false },
+      updateSettings: vi.fn(),
+      isLoading: false,
     });
 
     render(
@@ -31,8 +31,10 @@ describe("MonthCalendar", () => {
   });
 
   it("should render the days of the week", () => {
-    (useGeneralSettings as any).mockReturnValue({
+    vi.mocked(useGeneralSettings).mockReturnValue({
       settings: { showBackgroundColorForWeekend: false },
+      updateSettings: vi.fn(),
+      isLoading: false,
     });
 
     render(
@@ -46,27 +48,30 @@ describe("MonthCalendar", () => {
   });
 
   it("should apply background color to weekends when enabled", () => {
-    (useGeneralSettings as any).mockReturnValue({
+    vi.mocked(useGeneralSettings).mockReturnValue({
       settings: { showBackgroundColorForWeekend: true },
+      updateSettings: vi.fn(),
+      isLoading: false,
     });
 
     // Render January 2025 (Jan 18 is Sat)
-    const { container } = render(
+    render(
       <ChakraProvider value={defaultSystem}>
         <MonthCalendar month={1} year={2025} events={{}} />
       </ChakraProvider>
     );
 
     // Look for the cell containing day 18 (Saturday)
-    // The Cell mock renders as <div>{day}</div>.
     const day18 = screen.getByText("18");
     const cell = day18.parentElement; // The GridItem container
     expect(cell).toHaveStyle("background: var(--chakra-colors-gray-100)");
   });
 
   it("should not apply background color to weekends when disabled", () => {
-    (useGeneralSettings as any).mockReturnValue({
+    vi.mocked(useGeneralSettings).mockReturnValue({
       settings: { showBackgroundColorForWeekend: false },
+      updateSettings: vi.fn(),
+      isLoading: false,
     });
 
     render(

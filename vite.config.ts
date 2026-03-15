@@ -22,6 +22,8 @@ export default defineConfig(() => {
     },
     test: {
       environment: "jsdom",
+      globals: true,
+      setupFiles: "./setupTests.ts",
       coverage: {
         exclude: [".pnp.cjs"],
       },

@@ -4,7 +4,7 @@ import { type StartDay } from "../types/start-day";
 import Cell from "./Cell";
 import { useMemo } from "react";
 import { useGeneralSettings } from "../hooks/useGeneralSettings";
-import { getDays, isDate, isWeekend, locale } from "../calendar-utils";
+import { getDays, isDate, isWeekend } from "../calendar-utils";
 
 export type MonthCalendarProps = {
   month: number;
@@ -17,12 +17,12 @@ export default function MonthCalendar({ month, year, events, startDay = "sun" }:
   const { settings } = useGeneralSettings();
   const isToday = isDate(new Date());
   const date = new Date(year, month - 1);
-  const monthName = new Date(date).toLocaleString(locale, { month: "long" });
+  const monthName = new Date(date).toLocaleString(navigator.language, { month: "long" });
   const firstDayOfMonth = new Date(year, month - 1, 1).getDay();
   const daysInMonth = new Date(year, month, 0).getDate();
 
   // Shift the weekday headers according to startDay
-  const days = useMemo(() => getDays(startDay), [startDay]);
+  const days = useMemo(() => getDays(startDay, navigator.language), [startDay]);
 
   // Calculate the offset for the first day of the month
   // JS getDay(): 0=Sun, 1=Mon, ..., 6=Sat

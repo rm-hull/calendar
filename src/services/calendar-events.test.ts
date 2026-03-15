@@ -10,10 +10,10 @@ vi.mock("./open-holidays", () => ({
   fetchOpenHolidays: vi.fn(),
 }));
 vi.mock("../types/gov-uk", () => ({
-  govUkToEvents: vi.fn((data) => ({ "2025-01-01": [] })),
+  govUkToEvents: vi.fn(() => ({ "2025-01-01": [] })),
 }));
 vi.mock("../types/open-holidays", () => ({
-  openHolidaysToEvents: vi.fn((data, lang) => ({ "2025-01-02": [] })),
+  openHolidaysToEvents: vi.fn(() => ({ "2025-01-02": [] })),
 }));
 
 describe("fetchCalendarEvents", () => {

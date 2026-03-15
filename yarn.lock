@@ -2058,7 +2058,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:*, @testing-library/jest-dom@npm:^6.9.1":
+"@testing-library/jest-dom@npm:^6.9.1":
   version: 6.9.1
   resolution: "@testing-library/jest-dom@npm:6.9.1"
   dependencies:
@@ -2303,15 +2303,6 @@ __metadata:
   dependencies:
     csstype: "npm:^3.2.2"
   checksum: 10/fbff239089ee64b6bd9b00543594db498278b06de527ef1b0f71bb0eb09cc4445a71b5dd3c0d3d0257255c4eed94406be40a74ad4a987ade8a8d5dd65c82bc5f
-  languageName: node
-  linkType: hard
-
-"@types/testing-library__jest-dom@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@types/testing-library__jest-dom@npm:6.0.0"
-  dependencies:
-    "@testing-library/jest-dom": "npm:*"
-  checksum: 10/1b4db1aa3c4225524203b4d1c3b36c7129e9d1e0547e46d2e5283c3ece226a3c16f5f20387cc71b33ab0eecd99d0cf91111bb327e8adb240388d99fb94af7a4d
   languageName: node
   linkType: hard
 
@@ -3818,12 +3809,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"baseline-browser-mapping@npm:^2.8.19":
-  version: 2.8.24
-  resolution: "baseline-browser-mapping@npm:2.8.24"
+"baseline-browser-mapping@npm:^2.10.0":
+  version: 2.10.8
+  resolution: "baseline-browser-mapping@npm:2.10.8"
   bin:
-    baseline-browser-mapping: dist/cli.js
-  checksum: 10/ea99b958242de7d9c714cc7139b67697f9b0731b292d3153578c988d98e919816cd515537db2fc56ea0918117d1524ac2c6baf860fb9a8bc7aa2adeed95582f7
+    baseline-browser-mapping: dist/cli.cjs
+  checksum: 10/820972372c87c65c2e665134d70aa44d5722492fb907aa79170fec84086a75de4675f6a7b717cf0a31b4c4f71cd0289b056b71e32007de97a37973a501d31dcb
   languageName: node
   linkType: hard
 
@@ -5936,7 +5927,6 @@ __metadata:
     "@types/react": "npm:^19.2.14"
     "@types/react-dom": "npm:^19.2.3"
     "@types/react-responsive-masonry": "npm:^2.7.0"
-    "@types/testing-library__jest-dom": "npm:^6.0.0"
     "@typescript-eslint/types": "npm:^8.57.0"
     "@vitejs/plugin-react": "npm:^6.0.1"
     "@vitest/coverage-v8": "npm:4.1.0"

@@ -1,8 +1,6 @@
 import { type StartDay } from "./types/start-day";
 
-export const locale = navigator.language;
-
-export function getDays(startDay: StartDay) {
+export function getDays(startDay: StartDay, locale: string = navigator.language) {
   const offset = startDay === "sun" ? 0 : 1;
   return [...Array(7).keys()].map((i) => {
     const date = new Date(Date.UTC(2023, 0, 1 + ((i + offset) % 7)));

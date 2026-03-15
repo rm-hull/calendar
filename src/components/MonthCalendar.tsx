@@ -4,6 +4,7 @@ import { type StartDay } from "../types/start-day";
 import Cell from "./Cell";
 import { useMemo } from "react";
 import { useGeneralSettings } from "../hooks/useGeneralSettings";
+import { getDays, isDate, isWeekend, locale } from "../calendar-utils";
 
 export type MonthCalendarProps = {
   month: number;
@@ -11,30 +12,6 @@ export type MonthCalendarProps = {
   events: CalendarEvents;
   startDay?: StartDay;
 };
-
-const locale = navigator.language;
-
-function getDays(startDay: StartDay) {
-  const offset = startDay === "sun" ? 0 : 1;
-  return [...Array(7).keys()].map((i) => {
-    const date = new Date(Date.UTC(2023, 0, 1 + ((i + offset) % 7)));
-    return date.toLocaleDateString(locale, { weekday: "short" });
-  });
-}
-
-function isDate(date: Date): (day: number | null, month: number, year: number) => boolean {
-  return (day, month, year) => {
-    if (!day) return false;
-    return date.getFullYear() === year && date.getMonth() + 1 === month && date.getDate() === day;
-  };
-}
-
-function isWeekend(day: number | null, month: number, year: number): boolean {
-  if (!day) return false;
-  const date = new Date(year, month - 1, day);
-  const dayOfWeek = date.getDay();
-  return dayOfWeek === 0 || dayOfWeek === 6; // Sunday or Saturday
-}
 
 export default function MonthCalendar({ month, year, events, startDay = "sun" }: MonthCalendarProps) {
   const { settings } = useGeneralSettings();

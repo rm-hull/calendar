@@ -20,5 +20,11 @@ export default defineConfig(() => {
     resolve: {
       tsconfigPaths: true,
     },
+    test: {
+      environment: "jsdom",
+      coverage: {
+        exclude: [".pnp.cjs"],
+      },
+    },
   };
 });

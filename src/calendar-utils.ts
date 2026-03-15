@@ -19,7 +19,7 @@ export function isDate(date: Date): (day: number | null, month: number, year: nu
 
 export function isWeekend(day: number | null, month: number, year: number): boolean {
   if (!day) return false;
-  const date = new Date(year, month - 1, day);
-  const dayOfWeek = date.getDay();
+  const date = new Date(Date.UTC(year, month - 1, day));
+  const dayOfWeek = date.getUTCDay();
   return dayOfWeek === 0 || dayOfWeek === 6; // Sunday or Saturday
 }

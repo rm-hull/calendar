@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import { defineConfig } from "vite";
 import { execSync } from "child_process";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
@@ -12,7 +12,11 @@ export default defineConfig(() => {
   process.env.VITE_GIT_COMMIT_HASH = execSync("git describe --always --dirty").toString().trimEnd();
 
   return {
-    plugins: [TanStackRouterVite(), react(), babel({ presets: [reactCompilerPreset()] })],
+    plugins: [
+      tanstackRouter({ target: "react", autoCodeSplitting: true }),
+      react(),
+      babel({ presets: [reactCompilerPreset()] }),
+    ],
     base: "/calendar",
     build: {
       sourcemap: true,

@@ -6,6 +6,9 @@ import { routeTree } from "./routeTree.gen";
 
 import { Provider } from "./components/ui/provider.tsx";
 import { Toaster } from "./components/ui/toaster";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
+TimeAgo.addLocale(en);
 
 const router = createRouter({ routeTree });
 

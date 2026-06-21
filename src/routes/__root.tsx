@@ -1,3 +1,4 @@
+import { JournalDrawer } from "../components/journal/JournalDrawer";
 import { ErrorFallback } from "@rm-hull/chakra-error-fallback";
 import { CatchBoundary, createRootRoute, Outlet } from "@tanstack/react-router";
 import React, { Suspense } from "react";
@@ -16,6 +17,7 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <CatchBoundary getResetKey={() => "reset"} errorComponent={ErrorFallback}>
+        <JournalDrawer />
         <Outlet />
       </CatchBoundary>
       <Suspense>

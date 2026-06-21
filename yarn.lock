@@ -2204,6 +2204,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "@types/uuid@npm:11.0.0"
+  dependencies:
+    uuid: "npm:*"
+  checksum: 10/9f94bd34e5d220c53cc58ea9f48a0061d3bc343e29bc33a17edc705f5e21fedda21553318151f2bc227c2b2b03727bbb536da2b82a61f84d2e1ca38abc5e5c3f
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:8.61.1":
   version: 8.61.1
   resolution: "@typescript-eslint/eslint-plugin@npm:8.61.1"
@@ -3920,6 +3929,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "date-fns@npm:4.4.0"
+  checksum: 10/ae702acea42fb8452abe74f6d133c2360de9a14f00985645684b0df9c12280276649e95b52298a4fd7dabcc3b38799eb111107da99320d1cd94ba1d8a3d1c174
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.4.3":
   version: 4.4.3
   resolution: "debug@npm:4.4.3"
@@ -4840,6 +4856,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"javascript-time-ago@npm:^2.3.7, javascript-time-ago@npm:^2.6.4":
+  version: 2.6.4
+  resolution: "javascript-time-ago@npm:2.6.4"
+  dependencies:
+    relative-time-format: "npm:^1.1.12"
+  checksum: 10/192e42ecee44910efaeeafc470b2ea25d7e8eca351e902d864cb0a37ff5b0b859608c69fb810c235eece479ce616d76f0fdbc7a46b90417e09aed1c362f7025a
+  languageName: node
+  linkType: hard
+
 "jiti@npm:^2.7.0":
   version: 2.7.0
   resolution: "jiti@npm:2.7.0"
@@ -5257,6 +5282,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"memoize-one@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "memoize-one@npm:6.0.0"
+  checksum: 10/28feaf7e9a870efef1187df110b876ce42deaf86c955f4111d72d23b96e44eed573469316e6ad0d2cc7fa3b1526978215617b126158015f957242c7493babca9
+  languageName: node
+  linkType: hard
+
 "merge2@npm:^1.3.0":
   version: 1.4.1
   resolution: "merge2@npm:1.4.1"
@@ -5382,15 +5414,18 @@ __metadata:
     "@types/react": "npm:^19.2.17"
     "@types/react-dom": "npm:^19.2.3"
     "@types/react-responsive-masonry": "npm:^2.7.0"
+    "@types/uuid": "npm:^11.0.0"
     "@typescript-eslint/types": "npm:^8.61.1"
     "@vitejs/plugin-react": "npm:^6.0.2"
     "@vitest/coverage-v8": "npm:4.1.9"
     babel-plugin-react-compiler: "npm:^1.0.0"
+    date-fns: "npm:^4.4.0"
     eslint: "npm:^10.5.0"
     eslint-plugin-react-compiler: "npm:19.1.0-rc.2"
     eslint-plugin-react-hooks: "npm:^7.1.1"
     eslint-plugin-react-refresh: "npm:^0.5.3"
     globals: "npm:^17.6.0"
+    javascript-time-ago: "npm:^2.6.4"
     jotai: "npm:^2.20.1"
     jsdom: "npm:^29.1.1"
     next-themes: "npm:^0.4.6"
@@ -5400,10 +5435,12 @@ __metadata:
     react-dom: "npm:^19.2.7"
     react-icons: "npm:^5.6.0"
     react-responsive-masonry: "npm:^2.7.2"
+    react-time-ago: "npm:^7.4.4"
     react-use: "npm:^17.6.1"
     tiny-invariant: "npm:^1.3.3"
     typescript: "npm:~6.0.3"
     typescript-eslint: "npm:^8.61.1"
+    uuid: "npm:^14.0.1"
     vite: "npm:^8.0.16"
     vitest: "npm:^4.1.9"
   languageName: unknown
@@ -5839,6 +5876,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-time-ago@npm:^7.4.4":
+  version: 7.4.4
+  resolution: "react-time-ago@npm:7.4.4"
+  dependencies:
+    javascript-time-ago: "npm:^2.3.7"
+    memoize-one: "npm:^6.0.0"
+    prop-types: "npm:^15.8.1"
+  peerDependencies:
+    react: ">=0.16.8"
+    react-dom: ">=0.16.8"
+  checksum: 10/941546cb8feba8da04261ff5f0fea147478eee84aa00a93a9f80ec3c72e2484452ca54f3881d919862fd2811f7ed54a4b4780855efac40654cd0f2a7973e5f61
+  languageName: node
+  linkType: hard
+
 "react-universal-interface@npm:^0.6.2":
   version: 0.6.2
   resolution: "react-universal-interface@npm:0.6.2"
@@ -5940,6 +5991,13 @@ __metadata:
   dependencies:
     regex-utilities: "npm:^2.3.0"
   checksum: 10/553bac92b7ddcea99187aea1bd5cd50f31a923b45ff0bb2ae3876387df01957eb074931613c8a1f6471bb8fea1e0ba1e52f12b8257a5602900e52dd1abb5e436
+  languageName: node
+  linkType: hard
+
+"relative-time-format@npm:^1.1.12":
+  version: 1.1.12
+  resolution: "relative-time-format@npm:1.1.12"
+  checksum: 10/2f5f88fd342256227818432fedea4341b43a4b562524812cd337e1cf6d109de15ece30634677d1eb621e5584deb4d7a904a192cb5e1ab11ff7a56f4c83f3a0c9
   languageName: node
   linkType: hard
 
@@ -6744,6 +6802,15 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 10/b40ad2847ba220695bff2d4ba4f4d60391c0fb4fb012faa7a4c18eb38b69181936f5edc55a522c4d20a788d1a879b73c3810952c9d0fd128d01cb3f22042c09e
+  languageName: node
+  linkType: hard
+
+"uuid@npm:*, uuid@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "uuid@npm:14.0.1"
+  bin:
+    uuid: dist-node/bin/uuid
+  checksum: 10/0f978fd5b0269d7acb615342aeb131f0b8d85eeb8ec34f2915d906baa3befcc14a079a430d0f8116aec6fd20c850cbfab65d1b3d1643fa81ed373c0cf9574f18
   languageName: node
   linkType: hard
 

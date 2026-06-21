@@ -31,12 +31,14 @@ export function SettingsDialog() {
   const [open, setOpen] = useState(false);
   const { settings } = useGeneralSettings();
 
-  useKey(".", (event) => {
-    if (event.metaKey || event.ctrlKey) {
+  useKey(
+    (event) => (event.metaKey || event.ctrlKey) && event.key === ".",
+    (event) => {
+      event.preventDefault();
       toaster.dismiss(TOASTER_ID);
       setOpen(true);
     }
-  });
+  );
 
   useEffect(() => {
     if (!(settings?.showTipsOnStartup ?? true)) return;

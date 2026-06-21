@@ -18,6 +18,13 @@ export function SettingsForm() {
     });
   };
 
+  const handleUpdateJournalOnStartup = () => {
+    updateSettings({
+      ...settings,
+      showJournalOnStartup: !(settings?.showJournalOnStartup ?? true),
+    });
+  };
+
   const handleUpdateBackgroundColorForWeekend = () => {
     updateSettings({
       ...settings,
@@ -48,8 +55,8 @@ export function SettingsForm() {
       </Field.Root>
 
       <Field.Root>
-        <HStack alignItems="start">
-          <Field.Label width={170}>Show background colour for weekend?</Field.Label>
+        <HStack alignItems="top">
+          <Field.Label width={270}>Show background colour for weekend?</Field.Label>
           <Switch.Root
             checked={settings?.showBackgroundColorForWeekend}
             onChange={handleUpdateBackgroundColorForWeekend}
@@ -64,8 +71,20 @@ export function SettingsForm() {
 
       <Field.Root>
         <HStack alignItems="top">
-          <Field.Label width={170}>Show tips on start-up?</Field.Label>
+          <Field.Label width={270}>Show tips on start-up?</Field.Label>
           <Switch.Root checked={settings?.showTipsOnStartup ?? true} onChange={handleUpdateTipsOnStartup}>
+            <Switch.HiddenInput />
+            <Switch.Control>
+              <Switch.Thumb />
+            </Switch.Control>
+          </Switch.Root>
+        </HStack>
+      </Field.Root>
+
+      <Field.Root>
+        <HStack alignItems="top">
+          <Field.Label width={270}>Show journal on start-up?</Field.Label>
+          <Switch.Root checked={settings?.showJournalOnStartup ?? true} onChange={handleUpdateJournalOnStartup}>
             <Switch.HiddenInput />
             <Switch.Control>
               <Switch.Thumb />

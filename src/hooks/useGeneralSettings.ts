@@ -4,6 +4,7 @@ import { useLocalStorage } from "@rm-hull/use-local-storage";
 export interface GeneralSettings {
   startDay?: StartDay;
   showTipsOnStartup?: boolean;
+  showJournalOnStartup?: boolean;
   showBackgroundColorForWeekend?: boolean;
 }
 

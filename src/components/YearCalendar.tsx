@@ -39,6 +39,10 @@ interface YearCalendarProps extends Partial<CalendarMonth> {
 
 export default function YearCalendar({ month, year, events }: YearCalendarProps) {
   const { settings } = useGeneralSettings();
+  if (!settings) {
+    return null;
+  }
+
   const gen = yearGenerator(year, month);
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 

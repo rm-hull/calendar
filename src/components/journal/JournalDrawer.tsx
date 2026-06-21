@@ -44,7 +44,6 @@ export function JournalDrawer() {
     <Drawer.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
       <Portal>
         <Drawer.Backdrop />
-        <Drawer.Trigger />
         <Drawer.Positioner>
           <Drawer.Content>
             <Drawer.CloseTrigger />

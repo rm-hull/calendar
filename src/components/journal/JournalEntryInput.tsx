@@ -23,7 +23,7 @@ export function JournalEntryInput({ date }: JournalEntryInputProps) {
   return (
     <VStack align="stretch" gap={3}>
       <Textarea
-        placeholder="What's on your mind? (Markdown supported)"
+        placeholder="What's on your mind?"
         value={content}
         onChange={(e) => setContent(e.target.value)}
         rows={3}

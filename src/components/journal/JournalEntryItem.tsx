@@ -1,5 +1,5 @@
 import { Box, HStack, Text, IconButton, VStack, Editable } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import TimeAgo from "react-time-ago";
 import { useDebounce } from "react-use";
@@ -23,7 +23,19 @@ export function JournalEntryItem({ entry }: JournalEntryItemProps) {
     }
   };
 
-  useDebounce(() => updateEntry(entry.id, { content: updatedValue }), 1000, [updatedValue]);
+  useEffect(() => {
+    setUpdatedValue(entry.content);
+  }, [entry.content]);
+
+  useDebounce(
+    () => {
+      if (updatedValue !== entry.content) {
+        updateEntry(entry.id, { content: updatedValue });
+      }
+    },
+    1000,
+    [updatedValue]
+  );
 
   return (
     <Box p={2} borderRadius="md" bg={bgColor} borderWidth="1px">
@@ -43,7 +55,7 @@ export function JournalEntryItem({ entry }: JournalEntryItemProps) {
         <Editable.Root
           fontSize="sm"
           whiteSpace="pre-wrap"
-          value={entry.content}
+          value={updatedValue}
           onValueChange={(e) => setUpdatedValue(e.value)}
           placeholder="Click to edit"
         >

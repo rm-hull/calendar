@@ -16,7 +16,6 @@ export function JournalDrawer() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 
-  console.log(settings?.showJournalOnStartup);
   useEffect(() => {
     if (settings?.showJournalOnStartup) {
       queueMicrotask(() => setOpen(true));

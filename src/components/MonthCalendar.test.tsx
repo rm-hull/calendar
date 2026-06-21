@@ -1,8 +1,8 @@
-import { describe, it, expect, vi, afterEach } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
-import MonthCalendar from "./MonthCalendar";
-import { useGeneralSettings } from "../hooks/useGeneralSettings";
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
+import { render, screen, cleanup } from "@testing-library/react";
+import { describe, it, expect, vi, afterEach } from "vitest";
+import { useGeneralSettings } from "../hooks/useGeneralSettings";
+import MonthCalendar from "./MonthCalendar";
 import "@testing-library/jest-dom/vitest";
 
 vi.mock("../hooks/useGeneralSettings");

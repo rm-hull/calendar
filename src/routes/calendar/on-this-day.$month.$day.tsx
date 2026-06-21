@@ -1,11 +1,11 @@
-import Backdrop from "../../components/Backdrop";
-import { OnThisDayCollection } from "../../types/wikimedia";
-import { createFileRoute } from "@tanstack/react-router";
 import { Container, Progress, Tabs, Text } from "@chakra-ui/react";
-import WikimediaEvent from "../../components/WikimediaEvent";
+import { createFileRoute } from "@tanstack/react-router";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Backdrop from "../../components/Backdrop";
 import { useColorModeValue } from "../../components/ui/color-mode";
+import WikimediaEvent from "../../components/WikimediaEvent";
 import { fetchOnThisDay } from "../../services/wikimedia";
+import { OnThisDayCollection } from "../../types/wikimedia";
 
 function PendingComponent() {
   const palette = useColorModeValue("orange", "gray");

@@ -3,7 +3,7 @@ import { CatchBoundary, createRootRoute, Outlet } from "@tanstack/react-router";
 import React, { Suspense } from "react";
 
 const TanStackRouterDevtools =
-  process.env.NODE_ENV === "production"
+  import.meta.env.MODE === "production"
     ? () => null // Render nothing in production
     : React.lazy(() =>
         // Lazy load in development

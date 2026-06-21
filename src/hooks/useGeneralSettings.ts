@@ -1,5 +1,5 @@
-import { StartDay } from "@/types/start-day";
 import { useLocalStorage } from "@rm-hull/use-local-storage";
+import { StartDay } from "@/types/start-day";
 
 export interface GeneralSettings {
   startDay?: StartDay;

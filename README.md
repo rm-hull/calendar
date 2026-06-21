@@ -9,6 +9,10 @@ The calendar is locale-aware and will display months and days in the users prefe
 
 ![image](./doc/screenshot.webp)
 
+### Journaling
+
+The app includes a built-in journaling feature that allows users to record personal notes for any given day. Journal entries are stored locally in the browser and can be organized using customizable categories.
+
 Each calendar cell is clickable and will retrieve events for the selected day from Wikimedia:
 
 ![image](./doc/on-this-day.webp)

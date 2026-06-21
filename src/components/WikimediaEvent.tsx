@@ -1,6 +1,6 @@
-import { OnThisDayEvent } from "../types/wikimedia";
 import { Card, Heading, Image, Link, Text } from "@chakra-ui/react";
 import { Fragment } from "react";
+import { OnThisDayEvent } from "../types/wikimedia";
 
 type EventProps = Pick<OnThisDayEvent, "year" | "text" | "pages">;
 
@@ -16,7 +16,7 @@ export default function WikimediaEvent({ year, text, pages }: EventProps) {
       <Card.Body p={2}>
         {pages.slice(0, 1).map((page, index) => (
           <Fragment key={index}>
-            {page.thumbnail && <Image src={page.thumbnail.source} width={400} />}
+            {page.thumbnail && <Image src={page.thumbnail.source} width={400} borderRadius="sm" />}
             <Text fontSize="sm">
               {page.extract}{" "}
               <Link href={page.content_urls.desktop.page} fontSize="xs" color="blue.500">

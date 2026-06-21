@@ -1,9 +1,9 @@
 import { Flex } from "@chakra-ui/react";
 import MonthCalendar from "../components/MonthCalendar";
+import { useGeneralSettings } from "../hooks/useGeneralSettings";
 import { type CalendarEvents } from "../types/events";
 import { type StartDay } from "../types/start-day";
 import { SettingsDialog } from "./settings/SettingsDialog";
-import { useGeneralSettings } from "../hooks/useGeneralSettings";
 
 type CalendarMonth = {
   year: number;
@@ -39,6 +39,10 @@ interface YearCalendarProps extends Partial<CalendarMonth> {
 
 export default function YearCalendar({ month, year, events }: YearCalendarProps) {
   const { settings } = useGeneralSettings();
+  if (!settings) {
+    return null;
+  }
+
   const gen = yearGenerator(year, month);
   const first12 = Array.from({ length: 12 }, () => gen.next().value);
 

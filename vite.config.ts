@@ -1,10 +1,8 @@
 /// <reference types="vitest" />
-
-import { tanstackRouter } from "@tanstack/router-plugin/vite";
-import { defineConfig } from "vite";
 import { execSync } from "child_process";
-import react, { reactCompilerPreset } from "@vitejs/plugin-react";
-import babel from "@rolldown/plugin-babel";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vitest/config";
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -13,24 +11,21 @@ export default defineConfig(() => {
 
   return {
     plugins: [
-      tanstackRouter({ target: "react", autoCodeSplitting: true }),
-      react(),
-      babel({ presets: [reactCompilerPreset()] }),
+      tanstackRouter({
+        target: "react",
+        autoCodeSplitting: true,
+      }),
+      // react({ babel: { plugins: ["babel-plugin-react-compiler"] } }),
     ],
     base: "/calendar",
     build: {
       sourcemap: true,
     },
-    resolve: {
-      tsconfigPaths: true,
-    },
     test: {
       environment: "jsdom",
-      globals: true,
-      setupFiles: "./setupTests.ts",
-      coverage: {
-        exclude: [".pnp.cjs"],
-      },
     },
+    resolve: {
+      tsconfigPaths: true
+    }
   };
 });

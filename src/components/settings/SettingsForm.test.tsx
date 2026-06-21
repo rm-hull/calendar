@@ -1,8 +1,8 @@
-import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { SettingsForm } from "./SettingsForm";
-import { useGeneralSettings } from "../../hooks/useGeneralSettings";
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
+import { render, screen } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+import { useGeneralSettings } from "../../hooks/useGeneralSettings";
+import { SettingsForm } from "./SettingsForm";
 import "@testing-library/jest-dom/vitest";
 
 vi.mock("../../hooks/useGeneralSettings", () => ({

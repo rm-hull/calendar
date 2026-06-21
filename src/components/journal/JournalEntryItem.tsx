@@ -1,12 +1,12 @@
+import { useColorModeValue } from "@/components/ui/color-mode";
+import { Tooltip } from "@/components/ui/tooltip";
+import { useJournal } from "@/hooks/useJournal";
+import { JournalEntry } from "@/types/journal";
 import { Box, HStack, Text, IconButton, VStack, Editable } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import TimeAgo from "react-time-ago";
 import { useDebounce } from "react-use";
-import { useColorModeValue } from "../ui/color-mode";
-import { Tooltip } from "../ui/tooltip";
-import { useJournal } from "@/hooks/useJournal";
-import { JournalEntry } from "@/types/journal";
 
 interface JournalEntryItemProps {
   entry: JournalEntry;
@@ -24,7 +24,7 @@ export function JournalEntryItem({ entry }: JournalEntryItemProps) {
   };
 
   useEffect(() => {
-    setUpdatedValue(entry.content);
+    queueMicrotask(() => setUpdatedValue(entry.content));
   }, [entry.content]);
 
   useDebounce(

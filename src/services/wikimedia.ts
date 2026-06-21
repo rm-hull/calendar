@@ -9,8 +9,8 @@ export async function fetchOnThisDay(month: string, day: string): Promise<OnThis
     },
   });
   if (!response.ok) {
-    console.error(response.text);
+    console.error(await response.text());
     throw new Error(`Failed to fetch data for ${month}/${day}`);
   }
-  return response.json();
+  return response.json() as Promise<OnThisDayAllResponse>;
 }

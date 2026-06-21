@@ -11,9 +11,10 @@ vi.mock("../../hooks/useGeneralSettings", () => ({
 
 describe("SettingsForm", () => {
   it("should render the settings form", () => {
-    (useGeneralSettings as any).mockReturnValue({
+    vi.mocked(useGeneralSettings).mockReturnValue({
       settings: { startDay: "mon", showTipsOnStartup: true, showBackgroundColorForWeekend: false },
       updateSettings: vi.fn(),
+      isLoading: false,
     });
 
     render(

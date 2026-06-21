@@ -1,7 +1,7 @@
+import { JournalEntry, JournalCategory, JournalState } from "@/types/journal";
 import { useLocalStorage } from "@rm-hull/use-local-storage";
 import { useCallback, useMemo } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { JournalEntry, JournalCategory, JournalState } from "@/types/journal";
 
 export function useJournal() {
   const { value, setValue, isLoading } = useLocalStorage<JournalState>("calendar.journal");
@@ -21,7 +21,7 @@ export function useJournal() {
         updatedAt: now,
       };
 
-      setValue({
+      void setValue({
         entries: [...entries, newEntry],
         categories,
       });
@@ -34,7 +34,7 @@ export function useJournal() {
       const updatedEntries = entries.map((entry) =>
         entry.id === entryId ? { ...entry, ...updates, updatedAt: new Date().toISOString() } : entry
       );
-      setValue({
+      void setValue({
         entries: updatedEntries,
         categories,
       });
@@ -45,7 +45,7 @@ export function useJournal() {
   const deleteEntry = useCallback(
     (entryId: string) => {
       const updatedEntries = entries.filter((entry) => entry.id !== entryId);
-      setValue({
+      void setValue({
         entries: updatedEntries,
         categories,
       });
@@ -60,7 +60,7 @@ export function useJournal() {
         name,
         color,
       };
-      setValue({
+      void setValue({
         entries,
         categories: [...categories, newCategory],
       });

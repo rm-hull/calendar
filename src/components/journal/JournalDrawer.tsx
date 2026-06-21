@@ -1,3 +1,5 @@
+import { useGeneralSettings } from "@/hooks/useGeneralSettings";
+import { useJournal } from "@/hooks/useJournal";
 import { Box, Button, Drawer, HStack, Text, IconButton, VStack, Separator, Portal } from "@chakra-ui/react";
 import { format, addDays, subDays, isSameDay, parseISO } from "date-fns";
 import { useEffect, useState } from "react";
@@ -5,8 +7,6 @@ import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { useKey } from "react-use";
 import { JournalEntryInput } from "./JournalEntryInput";
 import { JournalEntryItem } from "./JournalEntryItem";
-import { useGeneralSettings } from "@/hooks/useGeneralSettings";
-import { useJournal } from "@/hooks/useJournal";
 
 const formatDate = (date: Date) => format(date, "yyyy-MM-dd");
 

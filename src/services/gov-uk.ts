@@ -1,4 +1,4 @@
-import { UkBankHolidays } from "../types/gov-uk";
+import { UkBankHolidays } from "@/types/gov-uk";
 
 export async function fetchUkBankHolidays(): Promise<UkBankHolidays> {
   const response = await fetch(`https://www.gov.uk/bank-holidays.json`, {
@@ -8,8 +8,8 @@ export async function fetchUkBankHolidays(): Promise<UkBankHolidays> {
     },
   });
   if (!response.ok) {
-    console.error(response.text);
+    console.error(await response.text());
     throw new Error(`Failed to fetch UK bank holiday data`);
   }
-  return response.json();
+  return response.json() as Promise<UkBankHolidays>;
 }

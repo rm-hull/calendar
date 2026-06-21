@@ -8,10 +8,13 @@ describe("fetchUkBankHolidays", () => {
 
   it("should fetch and return UK bank holiday data", async () => {
     const mockData = { "england-and-wales": { events: [] } };
-    (fetch as any).mockResolvedValue({
+    vi.mocked(fetch).mockResolvedValue({
       ok: true,
-      json: async () => mockData,
-    });
+      json: async () => {
+        await Promise.resolve();
+        return mockData;
+      },
+    } as Response);
 
     const result = await fetchUkBankHolidays();
     expect(result).toEqual(mockData);
@@ -27,10 +30,13 @@ describe("fetchUkBankHolidays", () => {
   });
 
   it("should throw an error when fetch fails", async () => {
-    (fetch as any).mockResolvedValue({
+    vi.mocked(fetch).mockResolvedValue({
       ok: false,
-      text: async () => "error",
-    });
+      text: async () => {
+        await Promise.resolve();
+        return "error";
+      },
+    } as Response);
 
     await expect(fetchUkBankHolidays()).rejects.toThrow("Failed to fetch UK bank holiday data");
   });

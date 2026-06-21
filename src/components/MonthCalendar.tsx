@@ -1,9 +1,9 @@
+import { getDays, isDate, isWeekend } from "@/calendar-utils";
+import { useGeneralSettings } from "@/hooks/useGeneralSettings";
+import { type CalendarEvents } from "@/types/events";
+import { type StartDay } from "@/types/start-day";
 import { Card, Grid, GridItem, Text } from "@chakra-ui/react";
 import { useMemo } from "react";
-import { getDays, isDate, isWeekend } from "../calendar-utils";
-import { useGeneralSettings } from "../hooks/useGeneralSettings";
-import { type CalendarEvents } from "../types/events";
-import { type StartDay } from "../types/start-day";
 import Cell from "./Cell";
 
 export type MonthCalendarProps = {
@@ -29,7 +29,7 @@ export default function MonthCalendar({ month, year, events, startDay = "sun" }:
   const offset = startDay === "mon" ? (firstDayOfMonth + 6) % 7 : firstDayOfMonth;
 
   const totalDays = 35; // 5 rows * 7 days
-  const cells: (number | null)[] = Array(totalDays).fill(null);
+  const cells: (number | null)[] = Array.from({ length: totalDays }, () => null);
 
   for (let d = 1; d <= daysInMonth; d++) {
     const naturalIndex = offset + (d - 1);

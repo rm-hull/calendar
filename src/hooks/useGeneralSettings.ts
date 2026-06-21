@@ -1,5 +1,5 @@
-import { useLocalStorage } from "@rm-hull/use-local-storage";
 import { StartDay } from "@/types/start-day";
+import { useLocalStorage } from "@rm-hull/use-local-storage";
 
 export interface GeneralSettings {
   startDay?: StartDay;
@@ -17,7 +17,7 @@ export function useGeneralSettings(): UseGeneralSettingsReturnType {
   const { value, setValue, isLoading } = useLocalStorage<GeneralSettings>("calendar.general-settings");
   return {
     settings: value,
-    updateSettings: setValue,
+    updateSettings: (value: GeneralSettings | undefined) => void (setValue(value)),
     isLoading,
   };
 }

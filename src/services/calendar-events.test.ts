@@ -20,7 +20,7 @@ describe("fetchCalendarEvents", () => {
   it("should fetch UK bank holidays for GB", async () => {
     const fetchUkBankHolidaysSpy = vi
       .spyOn(govUk, "fetchUkBankHolidays")
-      .mockResolvedValue({ "england-and-wales": { events: [] } } as any);
+      .mockResolvedValue({ "england-and-wales": { events: [], division: "england-and-wales" } });
 
     const events = await fetchCalendarEvents(new Date("2025-01-01"), new Date("2025-12-31"), ["en-GB"]);
 

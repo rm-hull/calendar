@@ -1,6 +1,6 @@
-import { CalendarEvents } from "../types/events";
-import { govUkToEvents } from "../types/gov-uk";
-import { openHolidaysToEvents } from "../types/open-holidays";
+import { CalendarEvents } from "@/types/events";
+import { govUkToEvents } from "@/types/gov-uk";
+import { openHolidaysToEvents } from "@/types/open-holidays";
 import { fetchUkBankHolidays } from "./gov-uk";
 import { fetchOpenHolidays } from "./open-holidays";
 

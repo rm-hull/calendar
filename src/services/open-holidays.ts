@@ -1,4 +1,4 @@
-import { HolidayResponse } from "../types/open-holidays";
+import { HolidayResponse } from "@/types/open-holidays";
 
 export async function fetchOpenHolidays(
   countryIsoCode: string,
@@ -20,8 +20,8 @@ export async function fetchOpenHolidays(
   });
 
   if (!response.ok) {
-    console.error(response.text);
-    throw new Error(`Failed to fetch openholidaysapi data for from ${from} to ${to} for ${countryIsoCode}`);
+    console.error(await response.text());
+    throw new Error(`Failed to fetch openholidaysapi data for from ${from.toISOString()} to ${to.toISOString()} for ${countryIsoCode}`);
   }
-  return response.json();
+  return response.json() as Promise<HolidayResponse[]>;
 }

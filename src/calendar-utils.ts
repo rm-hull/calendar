@@ -1,4 +1,4 @@
-import { type StartDay } from "./types/start-day";
+import { type StartDay } from "@/types/start-day";
 
 export function getDays(startDay: StartDay, locale: string = navigator.language) {
   const offset = startDay === "sun" ? 0 : 1;

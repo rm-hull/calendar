@@ -2,7 +2,7 @@ import { useGeneralSettings } from "@/hooks/useGeneralSettings";
 import { useJournal } from "@/hooks/useJournal";
 import { Box, Button, Drawer, HStack, Text, IconButton, VStack, Separator, Portal } from "@chakra-ui/react";
 import { format, addDays, subDays, isSameDay, parseISO } from "date-fns";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { useKey } from "react-use";
 import { JournalEntryInput } from "./JournalEntryInput";
@@ -30,13 +30,13 @@ export function JournalDrawer() {
     }
   );
 
-  const navigateToDay = (date: Date) => {
+  const navigateToDay = useCallback((date: Date) => {
     setSelectedDate(date);
-  };
+  }, [setSelectedDate]);
 
-  const goToToday = () => {
+  const goToToday = useCallback(() => {
     setSelectedDate(new Date());
-  };
+  }, [setSelectedDate]);
 
   const todayEntries = entries.filter((entry) => isSameDay(parseISO(entry.date), selectedDate));
 

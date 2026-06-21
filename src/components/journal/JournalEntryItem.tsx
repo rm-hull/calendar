@@ -1,12 +1,11 @@
 import { useColorModeValue } from "@/components/ui/color-mode";
-import { Tooltip } from "@/components/ui/tooltip";
 import { useJournal } from "@/hooks/useJournal";
 import { JournalEntry } from "@/types/journal";
-import { Box, HStack, Text, IconButton, VStack, Editable } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { FiTrash2 } from "react-icons/fi";
+import { Box, HStack, Text, VStack, Editable } from "@chakra-ui/react";
+import { useCallback, useEffect, useState } from "react";
 import TimeAgo from "react-time-ago";
 import { useDebounce } from "react-use";
+import { DeleteButton } from "./DeleteButton";
 
 interface JournalEntryItemProps {
   entry: JournalEntry;
@@ -17,11 +16,9 @@ export function JournalEntryItem({ entry }: JournalEntryItemProps) {
   const [updatedValue, setUpdatedValue] = useState(entry.content);
   const bgColor = useColorModeValue("bg.muted", "bg.muted");
 
-  const handleDelete = () => {
-    if (confirm("Delete this entry?")) {
-      deleteEntry(entry.id);
-    }
-  };
+  const handleDelete = useCallback(() => {
+    deleteEntry(entry.id);
+  }, [deleteEntry, entry.id]);
 
   useEffect(() => {
     queueMicrotask(() => setUpdatedValue(entry.content));
@@ -45,11 +42,7 @@ export function JournalEntryItem({ entry }: JournalEntryItemProps) {
             <TimeAgo date={new Date(entry.updatedAt ?? entry.createdAt)} locale="en-US" />
           </Text>
           <HStack gap={1}>
-            <Tooltip content="Delete">
-              <IconButton aria-label="Delete entry" variant="ghost" size="xs" colorPalette="red" onClick={handleDelete}>
-                <FiTrash2 />
-              </IconButton>
-            </Tooltip>
+            <DeleteButton onDelete={handleDelete} />
           </HStack>
         </HStack>
         <Editable.Root

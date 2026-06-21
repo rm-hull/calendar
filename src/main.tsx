@@ -1,11 +1,11 @@
 import { createRouter, RouterProvider } from "@tanstack/react-router";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "./components/ui/provider.tsx";
 import { Toaster } from "./components/ui/toaster";
 import { routeTree } from "./routeTree.gen";
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en";
 TimeAgo.addLocale(en);
 
 const router = createRouter({ routeTree });

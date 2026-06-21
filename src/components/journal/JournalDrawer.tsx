@@ -1,12 +1,12 @@
-import { useJournal } from "@/hooks/useJournal";
 import { Box, Button, Drawer, HStack, Text, IconButton, VStack, Separator, Portal } from "@chakra-ui/react";
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
-import { useEffect, useState } from "react";
-import { JournalEntryItem } from "./JournalEntryItem";
-import { JournalEntryInput } from "./JournalEntryInput";
 import { format, addDays, subDays, isSameDay, parseISO } from "date-fns";
+import { useEffect, useState } from "react";
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { useKey } from "react-use";
+import { JournalEntryInput } from "./JournalEntryInput";
+import { JournalEntryItem } from "./JournalEntryItem";
 import { useGeneralSettings } from "@/hooks/useGeneralSettings";
+import { useJournal } from "@/hooks/useJournal";
 
 const formatDate = (date: Date) => format(date, "yyyy-MM-dd");
 
@@ -16,13 +16,12 @@ export function JournalDrawer() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 
-  console.log(settings?.showJournalOnStartup)
+  console.log(settings?.showJournalOnStartup);
   useEffect(() => {
     if (settings?.showJournalOnStartup) {
       queueMicrotask(() => setOpen(true));
     }
-
-  }, [settings?.showJournalOnStartup])
+  }, [settings?.showJournalOnStartup]);
 
   useKey(
     (event) => (event.metaKey || event.ctrlKey) && event.key === "j",

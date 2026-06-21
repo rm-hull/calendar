@@ -1,7 +1,7 @@
-import { JournalDrawer } from "../components/journal/JournalDrawer";
 import { ErrorFallback } from "@rm-hull/chakra-error-fallback";
 import { CatchBoundary, createRootRoute, Outlet } from "@tanstack/react-router";
 import React, { Suspense } from "react";
+import { JournalDrawer } from "../components/journal/JournalDrawer";
 
 const TanStackRouterDevtools =
   import.meta.env.MODE === "production"

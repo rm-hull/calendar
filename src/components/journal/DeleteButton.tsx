@@ -4,7 +4,6 @@ import { FiTrash2 } from "react-icons/fi";
 
 interface DeleteDialogProps {
   onDelete: () => void;
-  // onCancel: () => void;
 }
 
 export function DeleteButton({ onDelete }: DeleteDialogProps) {

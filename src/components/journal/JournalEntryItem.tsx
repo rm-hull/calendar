@@ -2,10 +2,12 @@ import { useColorModeValue } from "@/components/ui/color-mode";
 import { useJournal } from "@/hooks/useJournal";
 import { JournalEntry } from "@/types/journal";
 import { Box, HStack, Text, VStack, Editable } from "@chakra-ui/react";
+import { formatISO } from "date-fns";
 import { useCallback, useEffect, useState } from "react";
 import TimeAgo from "react-time-ago";
 import { useDebounce } from "react-use";
 import { DeleteButton } from "./DeleteButton";
+import { MoveButton } from "./MoveButton";
 
 interface JournalEntryItemProps {
   entry: JournalEntry;
@@ -15,6 +17,13 @@ export function JournalEntryItem({ entry }: JournalEntryItemProps) {
   const { deleteEntry, updateEntry } = useJournal();
   const [updatedValue, setUpdatedValue] = useState(entry.content);
   const bgColor = useColorModeValue("bg.muted", "bg.muted");
+
+  const handleMove = useCallback(
+    (dt: Date) => {
+      updateEntry(entry.id, { date: formatISO(dt, { representation: "date" }) });
+    },
+    [updateEntry, entry.id]
+  );
 
   const handleDelete = useCallback(() => {
     deleteEntry(entry.id);
@@ -42,6 +51,7 @@ export function JournalEntryItem({ entry }: JournalEntryItemProps) {
             <TimeAgo date={new Date(entry.updatedAt ?? entry.createdAt)} locale="en-US" />
           </Text>
           <HStack gap={1}>
+            <MoveButton onMove={handleMove} />
             <DeleteButton onDelete={handleDelete} />
           </HStack>
         </HStack>

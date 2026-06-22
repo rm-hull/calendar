@@ -1,12 +1,5 @@
-import { StartDay } from "@/types/start-day";
+import { GeneralSettings } from "@/types/settings";
 import { useLocalStorage } from "@rm-hull/use-local-storage";
-
-export interface GeneralSettings {
-  startDay?: StartDay;
-  showTipsOnStartup?: boolean;
-  showJournalOnStartup?: boolean;
-  showBackgroundColorForWeekend?: boolean;
-}
 
 type UseGeneralSettingsReturnType = {
   settings: GeneralSettings | undefined;

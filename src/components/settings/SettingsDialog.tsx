@@ -1,14 +1,13 @@
+import { toaster } from "@/components/ui/toaster";
+import { useGeneralSettings } from "@/hooks/useGeneralSettings";
+import { TOASTER_ID } from "@/types/settings";
 import { Button, CloseButton, Dialog, HStack, Icon, Kbd, Portal, Tabs, Text } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { IoInformationCircleSharp } from "react-icons/io5";
 import { useKey } from "react-use";
-import { useGeneralSettings } from "../../hooks/useGeneralSettings";
-import { toaster } from "../ui/toaster";
 import { About } from "./About";
 import { License } from "./License";
 import { SettingsForm } from "./SettingsForm";
-
-const TOASTER_ID = "settings-toast";
 
 function ToastDescription() {
   const isMac = navigator.platform.toLowerCase().includes("mac");

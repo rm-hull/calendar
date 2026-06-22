@@ -3,11 +3,11 @@ import { Button, ButtonGroup, CloseButton, DatePicker, DateValue, Dialog, IconBu
 import { useCallback, useState } from "react";
 import { LuMoveHorizontal } from "react-icons/lu";
 
-interface DeleteDialogProps {
+interface MoveButtonProps {
   onMove: (newDate: Date) => void;
 }
 
-export function MoveButton({ onMove }: DeleteDialogProps) {
+export function MoveButton({ onMove }: MoveButtonProps) {
   const [newDate, setNewDate] = useState<DateValue[]>([]);
 
   const handleMove = useCallback(() => {

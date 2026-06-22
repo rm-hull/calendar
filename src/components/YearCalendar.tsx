@@ -38,8 +38,8 @@ interface YearCalendarProps extends Partial<CalendarMonth> {
 }
 
 export default function YearCalendar({ month, year, events }: YearCalendarProps) {
-  const { settings } = useGeneralSettings();
-  if (!settings) {
+  const { settings, isLoading } = useGeneralSettings();
+  if (isLoading) {
     return null;
   }
 

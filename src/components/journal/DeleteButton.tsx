@@ -2,11 +2,11 @@ import { Tooltip } from "@/components/ui/tooltip";
 import { Button, ButtonGroup, CloseButton, Dialog, IconButton } from "@chakra-ui/react";
 import { FiTrash2 } from "react-icons/fi";
 
-interface DeleteDialogProps {
+interface DeleteButtonProps {
   onDelete: () => void;
 }
 
-export function DeleteButton({ onDelete }: DeleteDialogProps) {
+export function DeleteButton({ onDelete }: DeleteButtonProps) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>

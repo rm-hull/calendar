@@ -20,7 +20,7 @@ export function JournalEntryItem({ entry }: JournalEntryItemProps) {
 
   const handleMove = useCallback(
     (dt: Date) => {
-      updateEntry(entry.id, { date: formatISO(dt, { format: "basic" }) });
+      updateEntry(entry.id, { date: formatISO(dt, { representation: "date" }) });
     },
     [updateEntry, entry.id]
   );

@@ -1,5 +1,7 @@
+import { toaster } from "@/components/ui/toaster";
 import { useGeneralSettings } from "@/hooks/useGeneralSettings";
 import { useJournal } from "@/hooks/useJournal";
+import { TOASTER_ID } from "@/types/settings";
 import { Box, Button, Drawer, HStack, Text, IconButton, VStack, Separator, Portal } from "@chakra-ui/react";
 import { format, addDays, subDays, isSameDay, parseISO } from "date-fns";
 import { useCallback, useEffect, useState } from "react";
@@ -25,14 +27,18 @@ export function JournalDrawer() {
   useKey(
     (event) => (event.metaKey || event.ctrlKey) && event.key === "j",
     (event) => {
+      toaster.dismiss(TOASTER_ID);
       event.preventDefault();
       setOpen((prev) => !prev);
     }
   );
 
-  const navigateToDay = useCallback((date: Date) => {
-    setSelectedDate(date);
-  }, [setSelectedDate]);
+  const navigateToDay = useCallback(
+    (date: Date) => {
+      setSelectedDate(date);
+    },
+    [setSelectedDate]
+  );
 
   const goToToday = useCallback(() => {
     setSelectedDate(new Date());

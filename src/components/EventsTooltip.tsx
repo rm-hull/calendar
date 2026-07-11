@@ -1,6 +1,6 @@
+import { PropsWithChildren } from "react";
 import { Tooltip } from "@/components/ui/tooltip";
 import { CalendarEvent } from "@/types/events";
-import { PropsWithChildren } from "react";
 
 type EventsTooltipProps = {
   events?: CalendarEvent[];

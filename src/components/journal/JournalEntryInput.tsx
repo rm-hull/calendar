@@ -1,7 +1,7 @@
-import { useJournal } from "@/hooks/useJournal";
 import { Box, Textarea, Button, VStack, HStack, TagsInput } from "@chakra-ui/react";
 import { useState } from "react";
 import { LuSend } from "react-icons/lu";
+import { useJournal } from "@/hooks/useJournal";
 
 interface JournalEntryInputProps {
   date: string;

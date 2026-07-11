@@ -1,11 +1,11 @@
-import { useColorModeValue } from "@/components/ui/color-mode";
-import { useJournal } from "@/hooks/useJournal";
-import { JournalEntry } from "@/types/journal";
 import { Box, HStack, Text, VStack, Editable } from "@chakra-ui/react";
 import { formatISO } from "date-fns";
 import { useCallback, useEffect, useState } from "react";
 import TimeAgo from "react-time-ago";
 import { useDebounce } from "react-use";
+import { useColorModeValue } from "@/components/ui/color-mode";
+import { useJournal } from "@/hooks/useJournal";
+import { JournalEntry } from "@/types/journal";
 import { DeleteButton } from "./DeleteButton";
 import { MoveButton } from "./MoveButton";
 

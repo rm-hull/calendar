@@ -4,14 +4,14 @@ Welcome! This document provides instructions for agentic coding agents working o
 
 ## 1. Build, Lint, and Test Commands
 
-This project uses `yarn` (via `yarn 4.x`) as the package manager and `vitest` for testing.
+This project uses `pnpm` as the package manager and `vitest` for testing.
 
-- **Build:** `yarn build` (Runs `tsc -b` and `vite build`)
-- **Lint:** `yarn lint` (Runs `eslint --cache --fix ./src`)
-- **Format:** `yarn format` (Runs `prettier --write ./src`)
-- **Test (All):** `yarn test`
-- **Test (Single File/Pattern):** `yarn vitest run <path/to/test.tsx>` or `yarn vitest run <pattern>`
-- **Test (With Coverage):** `yarn test:ci`
+- **Build:** `pnpm build` (Runs `tsc -b` and `vite build`)
+- **Lint:** `pnpm lint` (Runs `eslint --cache --fix ./src`)
+- **Format:** `pnpm format` (Runs `prettier --write ./src`)
+- **Test (All):** `pnpm test`
+- **Test (Single File/Pattern):** `pnpm vitest run <path/to/test.tsx>` or `pnpm vitest run <pattern>`
+- **Test (With Coverage):** `pnpm test:ci`
 
 ## 2. Coding Style Guidelines
 
@@ -19,8 +19,8 @@ This project uses `yarn` (via `yarn 4.x`) as the package manager and `vitest` fo
 
 - **TypeScript:** Use strict mode. Avoid `any` types. Leverage TypeScript's inference where appropriate.
 - **Language:** ES Modules (`type: "module"` in `package.json`).
-- **Formatting:** Managed by `prettier` (configuration in `.prettierrc`). Run `yarn format` before committing.
-- **Linting:** Managed by `eslint` (configuration in `eslint.config.js`). Ensure code passes `yarn lint`.
+- **Formatting:** Managed by `prettier` (configuration in `.prettierrc`). Run `pnpm format` before committing.
+- **Linting:** Managed by `eslint` (configuration in `eslint.config.js`). Ensure code passes `pnpm lint`.
 
 ### React & Components
 
@@ -64,4 +64,4 @@ This project uses `yarn` (via `yarn 4.x`) as the package manager and `vitest` fo
 - `src/types/`: TypeScript type definitions.
 - `public/`: Static assets.
 
-Please adhere strictly to these conventions. Always run `yarn lint` and `yarn test` before submitting changes.
+Please adhere strictly to these conventions. Always run `pnpm lint` and `pnpm test` before submitting changes.

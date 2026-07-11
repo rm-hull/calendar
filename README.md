@@ -24,6 +24,6 @@ The yearly calendar can be printed, and should format nicely on A4 in portrait o
 ## Running locally
 
 ```
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 ```

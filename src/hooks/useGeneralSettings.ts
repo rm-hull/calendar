@@ -1,5 +1,5 @@
-import { GeneralSettings } from "@/types/settings";
 import { useLocalStorage } from "@rm-hull/use-local-storage";
+import { GeneralSettings } from "@/types/settings";
 
 type UseGeneralSettingsReturnType = {
   settings: GeneralSettings | undefined;

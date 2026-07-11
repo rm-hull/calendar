@@ -1,7 +1,7 @@
-import { JournalEntry, JournalCategory, JournalState } from "@/types/journal";
 import { useLocalStorage } from "@rm-hull/use-local-storage";
 import { useCallback, useMemo } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { JournalEntry, JournalCategory, JournalState } from "@/types/journal";
 
 export function useJournal() {
   const { value, setValue, isLoading } = useLocalStorage<JournalState>("calendar.journal");

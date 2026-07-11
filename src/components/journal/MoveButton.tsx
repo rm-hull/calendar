@@ -1,7 +1,7 @@
-import { Tooltip } from "@/components/ui/tooltip";
 import { Button, ButtonGroup, CloseButton, DatePicker, DateValue, Dialog, IconButton } from "@chakra-ui/react";
 import { useCallback, useState } from "react";
 import { LuMoveHorizontal } from "react-icons/lu";
+import { Tooltip } from "@/components/ui/tooltip";
 
 interface MoveButtonProps {
   onMove: (newDate: Date) => void;

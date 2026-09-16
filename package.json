@@ -23,7 +23,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.37.0",
     "@emotion/react": "^11.14.0",
-    "@rm-hull/chakra-error-fallback": "^0.1.4",
+    "@rm-hull/chakra-error-fallback": "^0.1.6",
     "@rm-hull/use-local-storage": "^0.3.4",
     "@tanstack/react-router": "^1.170.35",
     "date-fns": "^4.4.0",

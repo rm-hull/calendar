@@ -203,8 +203,8 @@ importers:
         specifier: ^5.7.0
         version: 5.7.0(react@19.3.0)
       react-responsive-masonry:
-        specifier: ^2.7.2
-        version: 2.7.2
+        specifier: ^2.9.0
+        version: 2.9.0(react@19.3.0)
       react-time-ago:
         specifier: ^7.4.4
         version: 7.4.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -3228,8 +3228,10 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  react-responsive-masonry@2.7.2:
-    resolution: {integrity: sha512-33j38neZYAb3ymO1A/xuiq6Pi09/nOKAfphn2vG5Uz46d95UhMWOyM2n4LLNR/pf/8FAc9myPkHPE7k0Ijix5w==}
+  react-responsive-masonry@2.9.0:
+    resolution: {integrity: sha512-Gf/YDIkb8+QhIUnofrGihZtU+gyjV+yiDg4mOpjxTJLOQNACSvVZAgIWTaAPrGBO+oig3M9hTwarc+YBuFFCdQ==}
+    peerDependencies:
+      react: '>=16.8.0'
 
   react-time-ago@7.4.4:
     resolution: {integrity: sha512-g1qqiEgIYgKvK6ySxyVq9nZ/s5mKbugY5fsgc0lB9suwVpbj58f47T578IqSkyzbe+kO6pk1ITmfTOTM8VizRw==}
@@ -7350,9 +7352,10 @@ snapshots:
 
   react-is@17.0.2: {}
 
-  react-responsive-masonry@2.7.2:
+  react-responsive-masonry@2.9.0(react@19.3.0):
     dependencies:
       prop-types: 15.8.1
+      react: 19.3.0
 
   react-time-ago@7.4.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
     dependencies:

@@ -1,7 +1,6 @@
 /// <reference types="vitest" />
 import { execSync } from "child_process";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
-import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 
 // https://vitejs.dev/config/
@@ -20,6 +19,13 @@ export default defineConfig(() => {
     base: "/calendar",
     build: {
       sourcemap: true,
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        onwarn(warning, defaultHandler) {
+          if (warning.code === "MODULE_LEVEL_DIRECTIVE") return;
+          defaultHandler?.(warning);
+        },
+      },
     },
     test: {
       environment: "jsdom",

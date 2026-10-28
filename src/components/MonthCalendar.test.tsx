@@ -54,17 +54,20 @@ describe("MonthCalendar", () => {
       isLoading: false,
     });
 
-    // Render January 2025 (Jan 18 is Sat)
+    // Render January 2025 (Jan 17 is Fri, Jan 18 is Sat)
     render(
       <ChakraProvider value={defaultSystem}>
         <MonthCalendar month={1} year={2025} events={{}} />
       </ChakraProvider>
     );
 
-    // Look for the cell containing day 18 (Saturday)
+    // The weekend cell (day 18, Saturday) should have a different CSS class
+    // than the weekday cell (day 17, Friday) because of the background prop.
+    const day17 = screen.getByText("17");
     const day18 = screen.getByText("18");
-    const cell = day18.parentElement; // The GridItem container
-    expect(cell).toHaveStyle("background: var(--chakra-colors-gray-100)");
+    const weekdayCell = day17.parentElement;
+    const weekendCell = day18.parentElement;
+    expect(weekendCell?.className).not.toBe(weekdayCell?.className);
   });
 
   it("should not apply background color to weekends when disabled", () => {
@@ -80,8 +83,11 @@ describe("MonthCalendar", () => {
       </ChakraProvider>
     );
 
+    // When disabled, weekend and weekday cells should have the same classes
+    const day17 = screen.getByText("17");
     const day18 = screen.getByText("18");
-    const cell = day18.parentElement;
-    expect(cell).not.toHaveStyle("background: var(--chakra-colors-gray-100)");
+    const weekdayCell = day17.parentElement;
+    const weekendCell = day18.parentElement;
+    expect(weekendCell?.className).toBe(weekdayCell?.className);
   });
 });

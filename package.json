@@ -5,7 +5,8 @@
   "type": "module",
   "packageManager": "pnpm@12.18.0",
   "overrides": {
-    "baseline-browser-mapping": "^2.10.0"
+    "baseline-browser-mapping": "^2.10.0",
+    "parse5-parser-stream": "^8.1.1"
   },
   "onlyBuiltDependencies": [
     "esbuild",
@@ -42,7 +43,7 @@
     "@babel/core": "^8.0.10",
     "@chakra-ui/cli": "^3.38.0",
     "@eslint/js": "^10.0.1",
-    "@rolldown/plugin-babel": "^0.2.4",
+    "@rolldown/plugin-babel": "^0.3.1",
     "@tanstack/eslint-plugin-router": "^1.162.0",
     "@tanstack/react-router-devtools": "^1.167.2",
     "@tanstack/router-cli": "^1.167.46",
@@ -79,7 +80,7 @@
     "prettier": "^3.9.10",
     "prop-types": "^15.8.1",
     "tiny-invariant": "^1.3.3",
-    "typescript": "~6.0.3",
+    "typescript": "~7.0.2",
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.6",
     "vitest": "^5.1.0"
